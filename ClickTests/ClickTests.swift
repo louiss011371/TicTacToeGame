@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Click
 
 class ClickTests: XCTestCase {
 
