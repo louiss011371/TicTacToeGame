@@ -8,133 +8,95 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+enum PlayerTurn: String {
+    case primary
+    case secondary
+    
+    init?(state: Int){
+        switch state {
+        case 1 : self = .primary
+        case 2 : self = .secondary
+        default: return nil
+        }
+    }
+    
+}
 
-    // MARK : Properties
+
+class ViewController: UIViewController {
     
-    var player1 = true
-    var player2 = false
+    @IBOutlet var image: [UIButton]!
+
+    var gameSize =  [[0,1,2],
+                     [3,4,5],
+                     [6,7,8]]
+
     
-    var buttons: [Bool] = {
-        var array = [Bool]()
-        for _ in 0...8 {
-            array.append(false)
+    var stepCount = 0
+    var playerTurn :PlayerTurn = .primary
+ 
+    @IBAction func tapDetected(_ sender: UIButton) {
+     
+        switch playerTurn {
+        case .primary:
+            stepCount += 1
+            print("player primary clicked button number = \(sender.tag)")
+            print("now step count = \(stepCount)")
+            updateOorX(button: sender, forPlayer: PlayerTurn.primary.rawValue)
+            playerTurn = .secondary
+    
+            break
+        case .secondary:
+            stepCount += 1
+             print("player secondary clicked button number = \(sender.tag)")
+             print("now step count = \(stepCount)")
+             updateOorX(button: sender, forPlayer: PlayerTurn.secondary.rawValue)
+             playerTurn = .primary
+             break
+        default:
+          break
         }
-        return array
-    }()
-    
-    var filledArray: [Int] = {
-        var array = [Int]()
-        for _ in 0...8 {
-            array.append(0)
+        if stepCount >= 9 {
+            print("draw")
         }
-        return array
-    }()
+        
+    }
     
-    // MARK : Outlets
-    
-    @IBOutlet weak var winnerLabel: UILabel!
-    @IBOutlet weak var winnerImageView: UIImageView!
-    
-    
+
+
+    // i am back. XD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        winnerLabel.isHidden = true
-        winnerImageView.isHidden = true
-        
-    }
+
+
+//         print("\(gameSize[0][0])")
+//         print("\(gameSize[0][1])")
+//         print("\(gameSize[0][2])")
+//         print("\(gameSize[1][0])")
+//         print("\(gameSize[1][1])")
+//         print("\(gameSize[1][2])")
+//         print("\(gameSize[2][0])")
+//         print("\(gameSize[2][1])")
+//         print("\(gameSize[2][2])")
     
-    @IBAction func buttonWasTapped(_ sender: UIButton) {
+
+        //Action
+       
         
-        if buttons[sender.tag] == false {
-            if player1 == true && player2 == false {
-                setBox(button: sender, forPlayer: 1)
-                filledArray[sender.tag] = 1
-            } else if player2 == true && player1 == false {
-                setBox(button: sender, forPlayer: 2)
-                filledArray[sender.tag] = 2
-            } else {
-                print("Erreur : les deux joueurs le peuvent pas jouer en même temps")
-            }
-            
-            if let winner = testWinner() {
-                print("Le gagnant est ... Joueur \(winner)")
-                if winner == 1 {
-                    winnerImageView.image = UIImage(named: "circle")
-                } else {
-                    winnerImageView.image = UIImage(named: "cross")
-                }
-                
-                winnerImageView.isHidden = false
-                winnerLabel.isHidden = false
-            }
-            
-            player2 = !player2
-            player1 = !player1
-            
-            buttons[sender.tag] = true
+  
+    // 0 1 2
+    // 3 4 5
+    // 6 7 8
+ 
+      
+    }
+    private func updateOorX(button: UIButton, forPlayer player: String) {
+        if player == PlayerTurn.primary.rawValue {
+            button.setImage(UIImage(named: "circle"), for: .normal)
         } else {
-            print("Bouton déjà occupé !")
-        }
-        
-        
-        
-        
-    }
-    
-    // MARK: Private functions
-    
-    private func setBox(button: UIButton, forPlayer player: Int) {
-        if player == 1 {
-            button.setBackgroundImage(UIImage(named: "circle"), for: .normal)
-        } else if player == 2 {
-            button.setBackgroundImage(UIImage(named: "cross"), for: .normal)
-        } else {
-            print("Erreur : le joueur \(player) n'existe pas.")
+            button.setImage(UIImage(named: "cross"), for: .normal)
         }
     }
-    
-    private func testWinner() -> Int? {
-        var winner: Int? = nil
-        
-        // Gagnant par ligne
-        if filledArray[0] != 0 && filledArray[0] == filledArray[1] && filledArray[1] == filledArray[2] {
-            winner = filledArray[0]
-        }
-        
-        if filledArray[3] != 0 && filledArray[3] == filledArray[4] && filledArray[4] == filledArray[5] {
-            winner = filledArray[3]
-        }
-        
-        if filledArray[6] != 0 && filledArray[6] == filledArray[7] && filledArray[7] == filledArray[8] {
-            winner = filledArray[6]
-        }
-        
-        // Gagnant par colonne
-        if filledArray[0] != 0 && filledArray[0] == filledArray[3] && filledArray[3] == filledArray[6] {
-            winner = filledArray[0]
-        }
-        
-        if filledArray[1] != 0 && filledArray[1] == filledArray[4] && filledArray[4] == filledArray[7] {
-            winner = filledArray[1]
-        }
-        
-        if filledArray[2] != 0 && filledArray[2] == filledArray[5] && filledArray[5] == filledArray[8] {
-            winner = filledArray[2]
-        }
-        
-        // Gagnant par diagonale
-        if filledArray[0] != 0 && filledArray[0] == filledArray[4] && filledArray[4] == filledArray[8] {
-            winner = filledArray[0]
-        }
-        
-        if filledArray[2] != 0 && filledArray[2] == filledArray[4] && filledArray[4] == filledArray[6] {
-            winner = filledArray[2]
-        }
-        
-        return winner
-    }
-    
     
 }
