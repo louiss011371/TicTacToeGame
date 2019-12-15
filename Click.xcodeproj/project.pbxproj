@@ -14,6 +14,8 @@
 		B5012D3222F177D300899585 /* ClickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5012D3122F177D300899585 /* ClickTests.swift */; };
 		B5012D3D22F177D300899585 /* ClickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5012D3C22F177D300899585 /* ClickUITests.swift */; };
 		B597FA6E237EED9C00C0A70D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597FA6D237EED9C00C0A70D /* ViewController.swift */; };
+		B5F226DF23A5FD9C0013723F /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F226DE23A5FD9B0013723F /* GameMap.swift */; };
+		B5F226E123A5FDFC0013723F /* GameMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F226E023A5FDFC0013723F /* GameMapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B5012D3C22F177D300899585 /* ClickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickUITests.swift; sourceTree = "<group>"; };
 		B5012D3E22F177D300899585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B597FA6D237EED9C00C0A70D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5F226DE23A5FD9B0013723F /* GameMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMap.swift; sourceTree = "<group>"; };
+		B5F226E023A5FDFC0013723F /* GameMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMapController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				B5012D1C22F177D300899585 /* AppDelegate.swift */,
 				B5012D2022F177D300899585 /* Main.storyboard */,
 				B597FA6D237EED9C00C0A70D /* ViewController.swift */,
+				B5F226DE23A5FD9B0013723F /* GameMap.swift */,
+				B5F226E023A5FDFC0013723F /* GameMapController.swift */,
 				B5012D2322F177D300899585 /* Assets.xcassets */,
 				B5012D2522F177D300899585 /* LaunchScreen.storyboard */,
 				B5012D2822F177D300899585 /* Info.plist */,
@@ -258,6 +264,8 @@
 			files = (
 				B597FA6E237EED9C00C0A70D /* ViewController.swift in Sources */,
 				B5012D1D22F177D300899585 /* AppDelegate.swift in Sources */,
+				B5F226E123A5FDFC0013723F /* GameMapController.swift in Sources */,
+				B5F226DF23A5FD9C0013723F /* GameMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

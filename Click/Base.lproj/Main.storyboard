@@ -25,14 +25,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj0-FP-nQb">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Vfj-MS-0yF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKf-Ll-TYU">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Iri-aw-7JC"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BT1-u9-tgn">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="wfF-UQ-zfT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -50,14 +59,23 @@
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-ef-ZRt">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="bPx-ZW-H7b"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qh1-yS-Nqz">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Hpo-KB-AOe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-5m-G7E">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="IQD-RX-ZjD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -103,14 +121,23 @@
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fp9-Uk-7gh">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="bNO-nP-Vhf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOv-hX-tHL">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="3vJ-MJ-73m"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtL-OL-Yzy">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
                                                 <state key="normal" image="circle"/>
+                                                <connections>
+                                                    <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="vUo-1A-FBM"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -161,6 +188,26 @@
                         <viewLayoutGuide key="safeArea" id="QZf-be-TyR"/>
                     </view>
                     <navigationItem key="navigationItem" id="NY5-9b-Ths"/>
+                    <connections>
+                        <outlet property="button0" destination="qj0-FP-nQb" id="PWc-cS-WMF"/>
+                        <outlet property="button1" destination="EKf-Ll-TYU" id="foL-cN-Xl8"/>
+                        <outlet property="button2" destination="BT1-u9-tgn" id="XHz-Eq-BMW"/>
+                        <outlet property="button3" destination="Ae1-ef-ZRt" id="Enn-EW-y3F"/>
+                        <outlet property="button4" destination="qh1-yS-Nqz" id="ZNS-no-dgF"/>
+                        <outlet property="button5" destination="5Ss-5m-G7E" id="NuQ-AP-CeV"/>
+                        <outlet property="button6" destination="Fp9-Uk-7gh" id="PQd-4s-x9J"/>
+                        <outlet property="button7" destination="NOv-hX-tHL" id="LIt-hJ-gjc"/>
+                        <outlet property="button8" destination="FtL-OL-Yzy" id="WKl-i9-uZK"/>
+                        <outletCollection property="image" destination="qj0-FP-nQb" collectionClass="NSMutableArray" id="k6S-Z0-MA4"/>
+                        <outletCollection property="image" destination="EKf-Ll-TYU" collectionClass="NSMutableArray" id="pY5-Zd-MbA"/>
+                        <outletCollection property="image" destination="BT1-u9-tgn" collectionClass="NSMutableArray" id="bbl-sr-SXv"/>
+                        <outletCollection property="image" destination="Ae1-ef-ZRt" collectionClass="NSMutableArray" id="ZmL-aw-ALD"/>
+                        <outletCollection property="image" destination="qh1-yS-Nqz" collectionClass="NSMutableArray" id="0OL-qt-kAE"/>
+                        <outletCollection property="image" destination="5Ss-5m-G7E" collectionClass="NSMutableArray" id="19I-dZ-qhH"/>
+                        <outletCollection property="image" destination="Fp9-Uk-7gh" collectionClass="NSMutableArray" id="lsV-bR-QPw"/>
+                        <outletCollection property="image" destination="NOv-hX-tHL" collectionClass="NSMutableArray" id="s1C-mz-PIG"/>
+                        <outletCollection property="image" destination="FtL-OL-Yzy" collectionClass="NSMutableArray" id="8Gc-Kz-lyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dh-le-mqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
