@@ -189,15 +189,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="NY5-9b-Ths"/>
                     <connections>
-                        <outlet property="button0" destination="qj0-FP-nQb" id="PWc-cS-WMF"/>
-                        <outlet property="button1" destination="EKf-Ll-TYU" id="foL-cN-Xl8"/>
-                        <outlet property="button2" destination="BT1-u9-tgn" id="XHz-Eq-BMW"/>
-                        <outlet property="button3" destination="Ae1-ef-ZRt" id="Enn-EW-y3F"/>
-                        <outlet property="button4" destination="qh1-yS-Nqz" id="ZNS-no-dgF"/>
-                        <outlet property="button5" destination="5Ss-5m-G7E" id="NuQ-AP-CeV"/>
-                        <outlet property="button6" destination="Fp9-Uk-7gh" id="PQd-4s-x9J"/>
-                        <outlet property="button7" destination="NOv-hX-tHL" id="LIt-hJ-gjc"/>
-                        <outlet property="button8" destination="FtL-OL-Yzy" id="WKl-i9-uZK"/>
                         <outletCollection property="image" destination="qj0-FP-nQb" collectionClass="NSMutableArray" id="k6S-Z0-MA4"/>
                         <outletCollection property="image" destination="EKf-Ll-TYU" collectionClass="NSMutableArray" id="pY5-Zd-MbA"/>
                         <outletCollection property="image" destination="BT1-u9-tgn" collectionClass="NSMutableArray" id="bbl-sr-SXv"/>

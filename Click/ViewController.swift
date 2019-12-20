@@ -38,57 +38,30 @@ class ViewController: UIViewController {
         
     }
     
-    
-    enum GameRule: String {
-        case one
-        case two
-        case three
-        
-        init?(state: Int){
-            switch state {
-            case 1 : self = .one
-            case 2 : self = .two
-            case 3 : self = .three
-            default: return nil
-            }
-        }
-        
-    }
-    @IBOutlet weak var button0: UIButton!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
-    @IBOutlet weak var button6: UIButton!
-    @IBOutlet weak var button7: UIButton!
-    @IBOutlet weak var button8: UIButton!
-    
-    
     @IBOutlet var image: [UIButton]!
     var board = TicTacToe()
     var stepCount = 0
     var playerTurn :PlayerTurn = .primary
     
-    var gameRule : GameRule = .one
     
     @IBAction func tapDetected(_ sender: UIButton) {
+        // check any button is clicked before next turn
+        clickDetected(sender)
+        
         switch playerTurn {
         case .primary:
             stepCount += 1
-            updateOorX(button: sender, forPlayer: PlayerTurn.primary.rawValue)
+            updateOorX(button: sender, forPlayer: PlayerTurn.primary)
             print(board.self)
             playerTurn = .secondary
         case .secondary:
             stepCount += 1
-            updateOorX(button: sender, forPlayer: PlayerTurn.secondary.rawValue)
+            updateOorX(button: sender, forPlayer: PlayerTurn.secondary)
             print(board.self)
             playerTurn = .primary
         default:
             break
         }
-    
-        
         
         if let results = winRule() {
             if results == "O" {
@@ -102,16 +75,6 @@ class ViewController: UIViewController {
             }else{
                 return
             }
-//            else if results == "O" {
-//                continuesClickDetected(false)
-//                print("winner is primary" )
-//            }else if results == "X" {
-//                continuesClickDetected(false)
-//                print("winner is secondary" )
-//            }else{
-//                return
-//            }
-//
         }
         
     }
@@ -121,49 +84,49 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button0.setImage(nil, for: .normal)
-        button1.setImage(nil, for: .normal)
-        button2.setImage(nil, for: .normal)
-        button3.setImage(nil, for: .normal)
-        button4.setImage(nil, for: .normal)
-        button5.setImage(nil, for: .normal)
-        button6.setImage(nil, for: .normal)
-        button7.setImage(nil, for: .normal)
-        button8.setImage(nil, for: .normal)
-        
+        for button in image {
+            button.setImage(nil, for: .normal)
+        }
     }
     
-    private func updateOorX(button: UIButton, forPlayer player: String) {
-        if player == PlayerTurn.primary.rawValue {
+    private func updateOorX(button: UIButton, forPlayer player: ViewController.PlayerTurn) {
+        switch player {
+        case .primary:
+            break
+        case .secondary:
+            break
+        }
+       
+        if player == PlayerTurn.primary {
             button.setImage(UIImage(named: "circle"), for: .normal)
             switch button.tag {
             case 0:
                 board[0,0] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 1:
                 board[0,1] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 2:
                 board[0,2] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 3:
                 board[1,0] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 4:
                 board[1,1] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 5:
                 board[1,2] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 6:
                 board[2,0] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 7:
                 board[2,1] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 8:
                 board[2,2] = "O"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             default:
                 return
             }
@@ -172,38 +135,35 @@ class ViewController: UIViewController {
             switch button.tag {
             case 0:
                 board[0,0] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 1:
                 board[0,1] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 2:
                 board[0,2] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 3:
                 board[1,0] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 4:
                 board[1,1] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 5:
                 board[1,2] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 6:
                 board[2,0] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 7:
                 board[2,1] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             case 8:
                 board[2,2] = "X"
-                button.isUserInteractionEnabled = false
+//                button.isUserInteractionEnabled = false
             default:
                 return
             }
-
         }
-     
-  
     }
     func winRule() -> String? {
         var result : String? = nil
@@ -252,5 +212,12 @@ class ViewController: UIViewController {
                button.isUserInteractionEnabled = enable
            }
        }
+    
+    func clickDetected(_ sender: UIButton) {
+        if sender.isSelected == false {
+            sender.isUserInteractionEnabled = false
+            
+        }
+    }
 
 }
