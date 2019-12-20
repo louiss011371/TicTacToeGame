@@ -9,20 +9,7 @@ import Foundation
 import UIKit
 
 
-class ViewController: UIViewController {
-    
-    
-    struct TicTacToe {
-        var board = [["","",""],["","",""],["","",""]]
-        subscript(x: Int, y: Int) -> String {
-            get {
-                return board[x][y]
-            }
-            set {
-                board[x][y] = newValue
-            }
-        }
-    }
+class GameViewController: UIViewController {
     
     enum PlayerTurn: String {
         case primary
@@ -39,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet var image: [UIButton]!
-    var board = TicTacToe()
+    var board = GameMap()
     var stepCount = 0
     var playerTurn :PlayerTurn = .primary
     
@@ -89,44 +76,35 @@ class ViewController: UIViewController {
         }
     }
     
-    private func updateOorX(button: UIButton, forPlayer player: ViewController.PlayerTurn) {
+    private func updateOorX(button: UIButton, forPlayer player: GameViewController.PlayerTurn) {
         switch player {
         case .primary:
             break
         case .secondary:
             break
         }
-       
+        
         if player == PlayerTurn.primary {
             button.setImage(UIImage(named: "circle"), for: .normal)
             switch button.tag {
             case 0:
                 board[0,0] = "O"
-//                button.isUserInteractionEnabled = false
             case 1:
                 board[0,1] = "O"
-//                button.isUserInteractionEnabled = false
             case 2:
                 board[0,2] = "O"
-//                button.isUserInteractionEnabled = false
             case 3:
                 board[1,0] = "O"
-//                button.isUserInteractionEnabled = false
             case 4:
                 board[1,1] = "O"
-//                button.isUserInteractionEnabled = false
             case 5:
                 board[1,2] = "O"
-//                button.isUserInteractionEnabled = false
             case 6:
                 board[2,0] = "O"
-//                button.isUserInteractionEnabled = false
             case 7:
                 board[2,1] = "O"
-//                button.isUserInteractionEnabled = false
             case 8:
                 board[2,2] = "O"
-//                button.isUserInteractionEnabled = false
             default:
                 return
             }
@@ -135,31 +113,22 @@ class ViewController: UIViewController {
             switch button.tag {
             case 0:
                 board[0,0] = "X"
-//                button.isUserInteractionEnabled = false
             case 1:
                 board[0,1] = "X"
-//                button.isUserInteractionEnabled = false
             case 2:
                 board[0,2] = "X"
-//                button.isUserInteractionEnabled = false
             case 3:
                 board[1,0] = "X"
-//                button.isUserInteractionEnabled = false
             case 4:
                 board[1,1] = "X"
-//                button.isUserInteractionEnabled = false
             case 5:
                 board[1,2] = "X"
-//                button.isUserInteractionEnabled = false
             case 6:
                 board[2,0] = "X"
-//                button.isUserInteractionEnabled = false
             case 7:
                 board[2,1] = "X"
-//                button.isUserInteractionEnabled = false
             case 8:
                 board[2,2] = "X"
-//                button.isUserInteractionEnabled = false
             default:
                 return
             }
