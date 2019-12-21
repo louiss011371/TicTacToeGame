@@ -8,19 +8,17 @@
 
 import UIKit
 
-class PlayerTurn: NSObject {
+enum PlayerTurn {
+    case primary
+    case secondary
     
-    enum PlayerTurn: String {
-        case primary
-        case secondary
-        
-        init?(state: Int){
-            switch state {
-            case 1 : self = .primary
-            case 2 : self = .secondary
-            default: return nil
-            }
+    init?(state: Int){
+        switch state {
+        case 1 : self = .primary
+        case 2 : self = .secondary
+        default: return nil
         }
-        
     }
+    
 }
+

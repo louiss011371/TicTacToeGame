@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rDk-gO-PwI">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
@@ -8,37 +8,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Tic-Tac-Toe-->
         <scene sceneID="mzh-7L-NAK">
             <objects>
                 <viewController id="AxJ-z4-N1L" customClass="GameViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hQm-RW-D1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXK-DT-FpH">
-                                <rect key="frame" x="20" y="226" width="374" height="444"/>
+                                <rect key="frame" x="0.66666666666665719" y="234" width="374" height="444"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vFs-uW-epW">
                                         <rect key="frame" x="12" y="20" width="350" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj0-FP-nQb">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Vfj-MS-0yF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKf-Ll-TYU">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Iri-aw-7JC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BT1-u9-tgn">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="wfF-UQ-zfT"/>
                                                 </connections>
@@ -58,21 +58,21 @@
                                         <subviews>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-ef-ZRt">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="bPx-ZW-H7b"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qh1-yS-Nqz">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Hpo-KB-AOe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-5m-G7E">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="IQD-RX-ZjD"/>
                                                 </connections>
@@ -120,21 +120,21 @@
                                         <subviews>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fp9-Uk-7gh">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="bNO-nP-Vhf"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOv-hX-tHL">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="3vJ-MJ-73m"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtL-OL-Yzy">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="circle"/>
+                                                <state key="normal" image="momo"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="vUo-1A-FBM"/>
                                                 </connections>
@@ -179,16 +179,51 @@
                                     <constraint firstItem="wPT-wW-rr2" firstAttribute="top" secondItem="AXK-DT-FpH" secondAttribute="top" id="zQe-Ic-uh4"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WInner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAN-NQ-x9Y">
+                                <rect key="frame" x="160" y="103" width="55" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="sora" translatesAutoresizingMaskIntoConstraints="NO" id="N36-lw-teU">
+                                <rect key="frame" x="137" y="126" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5y8-BR-2EH">
+                                <rect key="frame" x="20" y="102" width="56" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS4-PZ-JeU">
+                                <rect key="frame" x="80" y="103" width="41.666666666666657" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="AXK-DT-FpH" firstAttribute="centerY" secondItem="hQm-RW-D1Q" secondAttribute="centerY" id="5S5-1G-abr"/>
+                            <constraint firstItem="AXK-DT-FpH" firstAttribute="centerY" secondItem="hQm-RW-D1Q" secondAttribute="centerY" constant="50" id="5S5-1G-abr"/>
+                            <constraint firstItem="CAN-NQ-x9Y" firstAttribute="leading" secondItem="QZf-be-TyR" secondAttribute="leading" constant="160" id="Dyz-Zc-cC9"/>
+                            <constraint firstItem="QZf-be-TyR" firstAttribute="trailing" secondItem="CAN-NQ-x9Y" secondAttribute="trailing" constant="160" id="Hur-jf-OaZ"/>
+                            <constraint firstItem="AXK-DT-FpH" firstAttribute="top" secondItem="N36-lw-teU" secondAttribute="bottom" constant="8" id="OXZ-pO-lTb"/>
                             <constraint firstItem="AXK-DT-FpH" firstAttribute="centerX" secondItem="hQm-RW-D1Q" secondAttribute="centerX" id="c5h-un-J3N"/>
+                            <constraint firstItem="QZf-be-TyR" firstAttribute="trailing" secondItem="N36-lw-teU" secondAttribute="trailing" constant="138" id="dIp-oD-wot"/>
+                            <constraint firstItem="dS4-PZ-JeU" firstAttribute="leading" secondItem="5y8-BR-2EH" secondAttribute="trailing" constant="4" id="dVw-4T-rb0"/>
+                            <constraint firstItem="N36-lw-teU" firstAttribute="leading" secondItem="QZf-be-TyR" secondAttribute="leading" constant="137" id="fde-WV-PGR"/>
+                            <constraint firstItem="5y8-BR-2EH" firstAttribute="top" secondItem="QZf-be-TyR" secondAttribute="top" constant="14" id="itT-ab-2h3"/>
+                            <constraint firstItem="dS4-PZ-JeU" firstAttribute="top" secondItem="QZf-be-TyR" secondAttribute="top" constant="15" id="n13-4m-shP"/>
+                            <constraint firstItem="N36-lw-teU" firstAttribute="top" secondItem="CAN-NQ-x9Y" secondAttribute="bottom" constant="2.6699999999999999" id="oyr-Q4-ndE"/>
+                            <constraint firstItem="5y8-BR-2EH" firstAttribute="leading" secondItem="QZf-be-TyR" secondAttribute="leading" constant="20" id="uac-Dh-okf"/>
+                            <constraint firstItem="CAN-NQ-x9Y" firstAttribute="top" secondItem="QZf-be-TyR" secondAttribute="top" constant="15" id="xgQ-ZD-Wrk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QZf-be-TyR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NY5-9b-Ths"/>
+                    <navigationItem key="navigationItem" title="Tic-Tac-Toe" id="NY5-9b-Ths"/>
                     <connections>
+                        <outlet property="testText" destination="dS4-PZ-JeU" id="9BY-hf-4UC"/>
+                        <outlet property="winnerImage" destination="N36-lw-teU" id="c3l-Bf-WEW"/>
+                        <outlet property="winnerLabel" destination="CAN-NQ-x9Y" id="qUJ-qJ-qZO"/>
                         <outletCollection property="image" destination="qj0-FP-nQb" collectionClass="NSMutableArray" id="k6S-Z0-MA4"/>
                         <outletCollection property="image" destination="EKf-Ll-TYU" collectionClass="NSMutableArray" id="pY5-Zd-MbA"/>
                         <outletCollection property="image" destination="BT1-u9-tgn" collectionClass="NSMutableArray" id="bbl-sr-SXv"/>
@@ -202,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dh-le-mqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082.608695652174" y="-654.24107142857144"/>
+            <point key="canvasLocation" x="2874" y="-664"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Flj-cF-cHz">
@@ -210,20 +245,150 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rDk-gO-PwI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ga8-bS-Z5L">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="AxJ-z4-N1L" kind="relationship" relationship="rootViewController" id="Pqh-cT-gMb"/>
+                        <segue destination="C3T-7I-5Tb" kind="relationship" relationship="rootViewController" id="wo1-YS-h4g"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdb-ms-7v8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="-653.57142857142856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Hdr-z3-mbb">
+            <objects>
+                <viewController id="C3T-7I-5Tb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HoF-wd-rAX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trysaillogo" translatesAutoresizingMaskIntoConstraints="NO" id="jNF-qz-5ze">
+                                <rect key="frame" x="27" y="119" width="332" height="117"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5th Anniversary Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzX-Ew-pXP">
+                                <rect key="frame" x="27" y="244" width="332" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-Dn-IdK">
+                                <rect key="frame" x="136" y="478" width="103" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="35d-il-4V0" kind="show" id="7sJ-jj-stO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jNF-qz-5ze" firstAttribute="leading" secondItem="h0F-6N-d6v" secondAttribute="leading" constant="27" id="2x4-0x-Abh"/>
+                            <constraint firstItem="h0F-6N-d6v" firstAttribute="trailing" secondItem="DzX-Ew-pXP" secondAttribute="trailing" constant="16" id="3nq-ac-KEj"/>
+                            <constraint firstItem="aXk-Dn-IdK" firstAttribute="centerX" secondItem="HoF-wd-rAX" secondAttribute="centerX" id="B4w-kk-no3"/>
+                            <constraint firstItem="h0F-6N-d6v" firstAttribute="bottom" secondItem="jNF-qz-5ze" secondAttribute="bottom" constant="542" id="RvT-m2-ooa"/>
+                            <constraint firstItem="DzX-Ew-pXP" firstAttribute="leading" secondItem="h0F-6N-d6v" secondAttribute="leading" constant="27" id="SXq-1U-zwu"/>
+                            <constraint firstItem="DzX-Ew-pXP" firstAttribute="centerX" secondItem="HoF-wd-rAX" secondAttribute="centerX" constant="5.5" id="VU7-KG-9lN"/>
+                            <constraint firstItem="jNF-qz-5ze" firstAttribute="trailing" secondItem="HoF-wd-rAX" secondAttribute="trailingMargin" id="sZG-tn-Zc1"/>
+                            <constraint firstItem="DzX-Ew-pXP" firstAttribute="top" secondItem="jNF-qz-5ze" secondAttribute="bottom" constant="8" id="vmq-Ph-dd1"/>
+                            <constraint firstItem="jNF-qz-5ze" firstAttribute="top" secondItem="h0F-6N-d6v" secondAttribute="top" constant="31" id="xUo-G6-LJW"/>
+                            <constraint firstItem="aXk-Dn-IdK" firstAttribute="top" secondItem="DzX-Ew-pXP" secondAttribute="bottom" constant="198" id="zcj-kY-Mgz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h0F-6N-d6v"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tJg-ny-Q5p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGl-6X-K7q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952.79999999999995" y="-654.67980295566508"/>
+        </scene>
+        <!--Character List-->
+        <scene sceneID="S0i-O6-3Ag">
+            <objects>
+                <viewController title="Character List" id="35d-il-4V0" customClass="CharacterViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BrU-eN-6zI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select you favourite character" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbl-WL-gas">
+                                <rect key="frame" x="20" y="127.00000000000001" width="335" height="21.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qjn-XO-ySC">
+                                <rect key="frame" x="20" y="257.33333333333331" width="335" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFY-Ed-He3">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.66666666666667" height="150"/>
+                                        <state key="normal" image="momo"/>
+                                        <connections>
+                                            <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="QbL-5c-4xU"/>
+                                            <segue destination="AxJ-z4-N1L" kind="show" identifier="GameVC" id="M9y-63-UDe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB0-BW-7pw">
+                                        <rect key="frame" x="116.66666666666666" y="0.0" width="101.66666666666666" height="150"/>
+                                        <state key="normal" image="sora"/>
+                                        <connections>
+                                            <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="i1o-Jn-u0t"/>
+                                            <segue destination="AxJ-z4-N1L" kind="show" identifier="GameVC" id="7ms-0q-d8n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPJ-Ed-g9R">
+                                        <rect key="frame" x="233.33333333333334" y="0.0" width="101.66666666666666" height="150"/>
+                                        <state key="normal" title="Button" image="shiina"/>
+                                        <connections>
+                                            <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="Axo-GZ-6xG"/>
+                                            <segue destination="AxJ-z4-N1L" kind="show" identifier="GameVC" id="LII-WF-PaR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="dbb-wF-ije"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPJ-SG-YTc">
+                                <rect key="frame" x="186" y="602" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Qjn-XO-ySC" firstAttribute="top" secondItem="qbl-WL-gas" secondAttribute="bottom" constant="108.67" id="5WP-F8-qWF"/>
+                            <constraint firstItem="Qjn-XO-ySC" firstAttribute="leading" secondItem="l0a-mE-2f2" secondAttribute="leading" constant="20" id="6KT-PI-0LG"/>
+                            <constraint firstItem="qbl-WL-gas" firstAttribute="leading" secondItem="l0a-mE-2f2" secondAttribute="leading" constant="20" id="Av9-MV-hup"/>
+                            <constraint firstItem="l0a-mE-2f2" firstAttribute="trailing" secondItem="qbl-WL-gas" secondAttribute="trailing" constant="20" id="IzK-ws-XET"/>
+                            <constraint firstItem="qbl-WL-gas" firstAttribute="top" secondItem="l0a-mE-2f2" secondAttribute="top" constant="39" id="aDG-9a-aJP"/>
+                            <constraint firstItem="l0a-mE-2f2" firstAttribute="trailing" secondItem="Qjn-XO-ySC" secondAttribute="trailing" constant="20" id="apw-Zu-lUQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l0a-mE-2f2"/>
+                    </view>
+                    <connections>
+                        <outlet property="momoIcon" destination="YFY-Ed-He3" id="QQE-uI-93V"/>
+                        <outlet property="shiinaIcon" destination="QPJ-Ed-g9R" id="cPO-G4-XJA"/>
+                        <outlet property="soraIcon" destination="IB0-BW-7pw" id="hrp-Rm-ABA"/>
+                        <outlet property="text" destination="xPJ-SG-YTc" id="oDi-mH-nd7"/>
+                        <segue destination="AxJ-z4-N1L" kind="show" id="FQx-h0-2sF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QuX-QD-MwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821.7391304347827" y="-656.25"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="circle" width="115" height="111"/>
+        <image name="momo" width="480" height="480"/>
+        <image name="shiina" width="800" height="800"/>
+        <image name="sora" width="307" height="307"/>
+        <image name="trysaillogo" width="571" height="300"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LII-WF-PaR"/>
+    </inferredMetricsTieBreakers>
 </document>
