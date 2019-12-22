@@ -237,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dh-le-mqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2874" y="-664"/>
+            <point key="canvasLocation" x="3023" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Flj-cF-cHz">
@@ -257,7 +257,7 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="-653.57142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="Hdr-z3-mbb">
             <objects>
                 <viewController id="C3T-7I-5Tb" sceneMemberID="viewController">
@@ -279,7 +279,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="35d-il-4V0" kind="show" id="7sJ-jj-stO"/>
+                                    <segue destination="j2D-kZ-zZT" kind="show" id="o3E-Ej-5uX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -298,16 +298,58 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h0F-6N-d6v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tJg-ny-Q5p"/>
+                    <navigationItem key="navigationItem" title="Home" id="tJg-ny-Q5p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGl-6X-K7q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952.79999999999995" y="-654.67980295566508"/>
         </scene>
-        <!--Character List-->
+        <!--Game Mode Select-->
+        <scene sceneID="kzP-em-UwR">
+            <objects>
+                <viewController title="Game Mode Select" id="j2D-kZ-zZT" customClass="SelectGameModeViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mbN-Rh-KKe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-OW-MmD">
+                                <rect key="frame" x="137" y="337" width="101" height="138"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1v-Y1-aOO">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
+                                        <state key="normal" title="VS Boss"/>
+                                        <connections>
+                                            <segue destination="35d-il-4V0" kind="show" id="D6t-8f-AxB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e38-TT-mMH">
+                                        <rect key="frame" x="0.0" y="54" width="101" height="30"/>
+                                        <state key="normal" title="VS player"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M85-hA-jou">
+                                        <rect key="frame" x="0.0" y="108" width="101" height="30"/>
+                                        <state key="normal" title="Network mode"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="y3X-OW-MmD" firstAttribute="centerY" secondItem="mbN-Rh-KKe" secondAttribute="centerY" id="ch6-ic-lrU"/>
+                            <constraint firstItem="y3X-OW-MmD" firstAttribute="centerX" secondItem="mbN-Rh-KKe" secondAttribute="centerX" id="eRB-3e-VEa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zO5-uq-Owt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game Mode" id="nS1-Jk-Sat"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FgS-Se-ovS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="43"/>
+        </scene>
+        <!--Character-->
         <scene sceneID="S0i-O6-3Ag">
             <objects>
-                <viewController title="Character List" id="35d-il-4V0" customClass="CharacterViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="35d-il-4V0" customClass="CharacterViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BrU-eN-6zI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -362,6 +404,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l0a-mE-2f2"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Character" id="fRK-Kr-xc0"/>
                     <connections>
                         <outlet property="momoImage" destination="YFY-Ed-He3" id="QQE-uI-93V"/>
                         <outlet property="shiinaImage" destination="QPJ-Ed-g9R" id="cPO-G4-XJA"/>
@@ -371,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuX-QD-MwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821.7391304347827" y="-656.25"/>
+            <point key="canvasLocation" x="1975" y="43"/>
         </scene>
     </scenes>
     <resources>
