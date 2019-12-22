@@ -10,59 +10,56 @@ import UIKit
 
 
 class GameViewController: UIViewController{
+    var receiveredCharacter : CharacterViewController?
     
-    @IBOutlet weak var testText: UILabel!
+    @IBOutlet weak var playerNameText: UILabel!
     
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet var winnerImage: UIImageView!
     
-    
-   
-    
-    @IBOutlet var image: [UIButton]!
+    @IBOutlet var oxImage: [UIButton]!
     var board = GameMap()
     var stepCount = 0
-    var playerTurn :PlayerTurn = .primary
-    
-    var receiveredCharacter : CharacterViewController?
-    var  momoImage :String = ""
-    
-    var  pandaImage: String = "pandagoro"
+    var playerTurn :PlayerTurn = .player
+   
+    // player, boss , draw game image
+    var playerImage = ""
+    var bossImage = "pandagoro"
+    var drawImage = "draw"
     
     @IBAction func tapDetected(_ sender: UIButton) {
         // check any button is clicked before next turn
         clickDetected(sender)
         
-       // sender.isEnabled = false
-        
         switch playerTurn {
-        case .primary:
+        case .player:
             stepCount += 1
-            updateOorX(button: sender, forPlayer: PlayerTurn.primary)
+            updateOorX(oxButton: sender, forPlayer: PlayerTurn.player)
             print(board.self)
-            playerTurn = .secondary
-        case .secondary:
+            playerTurn = .boss
+        case .boss:
             stepCount += 1
-            updateOorX(button: sender, forPlayer: PlayerTurn.secondary)
+            updateOorX(oxButton: sender, forPlayer: PlayerTurn.boss)
             print(board.self)
-            playerTurn = .primary
+            playerTurn = .player
         default:
             break
         }
         
         if let results = winRule() {
-            
-            winnerLabel.isHidden = false
             winnerImage.isHidden = false
             if results == "O" {
+                winnerLabel.isHidden = false
                 print("winner is O")
-                winnerImage.image = UIImage(named: momoImage)
+                winnerImage.image = UIImage(named: playerImage)
                 continuesClickDetected(false)
             }else if results == "X"{
-                  print("winner is X")
-                winnerImage.image = UIImage(named: pandaImage)
+                winnerLabel.isHidden = false
+                print("winner is X")
+                winnerImage.image = UIImage(named: bossImage)
                 continuesClickDetected(false)
             }else if results == "🔺" && stepCount == 9  {
+                winnerImage.image = UIImage(named: drawImage)
                   print("draw")
             }else{
                 return
@@ -76,56 +73,54 @@ class GameViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        playerNameText.text = ""
         winnerImage.isHidden = true
         winnerImage.image = nil
         winnerLabel.isHidden = true
         
-        
-        
-        
-        for button in image {
-            button.setImage(nil, for: .normal)
+        for oxButton in oxImage {
+            oxButton.setImage(nil, for: .normal)
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        print(momoImage)
-        testText.text = momoImage
+        print(playerImage)
+        playerNameText.text = playerImage
     }
     
-    private func updateOorX(button: UIButton, forPlayer player: PlayerTurn) {
-        var who: String
+    private func updateOorX(oxButton: UIButton, forPlayer player: PlayerTurn) {
+        var chickedPerson: String
         
         switch player {
-        case .primary:
-            who = "O"
-            button.setImage(UIImage(named: "\(momoImage)"), for: .normal)
-        case .secondary:
-            who = "X"
-            button.setImage(UIImage(named: "\(pandaImage)"), for: .normal)
+        case .player:
+            chickedPerson = "O"
+            oxButton.setImage(UIImage(named: "\(playerImage)"), for: .normal)
+        case .boss:
+            chickedPerson = "X"
+            oxButton.setImage(UIImage(named: "\(bossImage)"), for: .normal)
         }
 
-            switch button.tag {
+            switch oxButton.tag {
             case 0:
-                board[0,0] = who
+                board[0,0] = chickedPerson
             case 1:
-                board[0,1] = who
+                board[0,1] = chickedPerson
             case 2:
-                board[0,2] = who
+                board[0,2] = chickedPerson
             case 3:
-                board[1,0] = who
+                board[1,0] = chickedPerson
             case 4:
-                board[1,1] = who
+                board[1,1] = chickedPerson
             case 5:
-                board[1,2] = who
+                board[1,2] = chickedPerson
             case 6:
-                board[2,0] = who
+                board[2,0] = chickedPerson
             case 7:
-                board[2,1] = who
+                board[2,1] = chickedPerson
             case 8:
-                board[2,2] = who
+                board[2,2] = chickedPerson
             default:
                 return
             }
@@ -174,7 +169,7 @@ class GameViewController: UIViewController{
     }
     
     func continuesClickDetected(_ enable: Bool) {
-           for button in image {
+           for button in oxImage {
                button.isUserInteractionEnabled = enable
            }
        }
@@ -187,6 +182,4 @@ class GameViewController: UIViewController{
     }
     
     // detect selected character
-  
-
 }

@@ -9,13 +9,13 @@
 import UIKit
 
 enum PlayerTurn {
-    case primary
-    case secondary
+    case player
+    case boss
     
     init?(state: Int){
         switch state {
-        case 1 : self = .primary
-        case 2 : self = .secondary
+        case 1 : self = .player
+        case 2 : self = .boss
         default: return nil
         }
     }

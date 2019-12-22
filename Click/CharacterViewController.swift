@@ -10,65 +10,37 @@ import UIKit
 
 class CharacterViewController: UIViewController {
     
-    // character icon
-    @IBOutlet weak var momoIcon : UIButton!
-    @IBOutlet weak var soraIcon : UIButton!
-    @IBOutlet weak var shiinaIcon : UIButton!
+    // character image
+    @IBOutlet weak var momoImage : UIButton!
+    @IBOutlet weak var soraImage : UIButton!
+    @IBOutlet weak var shiinaImage : UIButton!
     
-    @IBOutlet weak var text: UILabel!
-    
-    
-    var iconNameText = ""
-    
-//    enum Character {
-//        case momoIcon
-//        case soraIcon
-//        case shiinaIcon
-//
-//        init?(state: Int) {
-//            switch state {
-//            case 1: self = .momoIcon
-//            case 2: self = .soraIcon
-//            case 3: self = .shiinaIcon
-//            default : return nil
-//            }
-//        }
-//    }
-
-
+    var imageNameText = ""
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        text.isHidden = true
-        // Do any additional setup after loading the view.
     }
-    
-    
+
     @IBAction func iconTapDetected(_ sender: UIButton) {
         switch sender.tag {
         case 0:
-            iconNameText = "momo"
+            imageNameText = "momo"
         case 1:
-            iconNameText = "sora"
+            imageNameText = "sora"
         case 2:
-            iconNameText = "shiina"
+            imageNameText = "shiina"
         default:
             return
         }
-    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GameVC",
             let gameVC = segue.destination as? GameViewController {
-            
-            gameVC.momoImage = self.iconNameText
+            gameVC.playerImage = self.imageNameText
         }
-        
     }
-    
-    
-
     /*
     // MARK: - Navigation
 

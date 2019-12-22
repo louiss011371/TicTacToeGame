@@ -179,13 +179,13 @@
                                     <constraint firstItem="wPT-wW-rr2" firstAttribute="top" secondItem="AXK-DT-FpH" secondAttribute="top" id="zQe-Ic-uh4"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WInner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAN-NQ-x9Y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAN-NQ-x9Y">
                                 <rect key="frame" x="160" y="103" width="55" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="sora" translatesAutoresizingMaskIntoConstraints="NO" id="N36-lw-teU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="momo" translatesAutoresizingMaskIntoConstraints="NO" id="N36-lw-teU">
                                 <rect key="frame" x="137" y="126" width="100" height="100"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5y8-BR-2EH">
@@ -194,8 +194,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS4-PZ-JeU">
-                                <rect key="frame" x="80" y="103" width="41.666666666666657" height="20.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="momo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS4-PZ-JeU">
+                                <rect key="frame" x="80" y="103" width="48.333333333333343" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -221,18 +221,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tic-Tac-Toe" id="NY5-9b-Ths"/>
                     <connections>
-                        <outlet property="testText" destination="dS4-PZ-JeU" id="9BY-hf-4UC"/>
+                        <outlet property="playerNameText" destination="dS4-PZ-JeU" id="9BY-hf-4UC"/>
                         <outlet property="winnerImage" destination="N36-lw-teU" id="c3l-Bf-WEW"/>
                         <outlet property="winnerLabel" destination="CAN-NQ-x9Y" id="qUJ-qJ-qZO"/>
-                        <outletCollection property="image" destination="qj0-FP-nQb" collectionClass="NSMutableArray" id="k6S-Z0-MA4"/>
-                        <outletCollection property="image" destination="EKf-Ll-TYU" collectionClass="NSMutableArray" id="pY5-Zd-MbA"/>
-                        <outletCollection property="image" destination="BT1-u9-tgn" collectionClass="NSMutableArray" id="bbl-sr-SXv"/>
-                        <outletCollection property="image" destination="Ae1-ef-ZRt" collectionClass="NSMutableArray" id="ZmL-aw-ALD"/>
-                        <outletCollection property="image" destination="qh1-yS-Nqz" collectionClass="NSMutableArray" id="0OL-qt-kAE"/>
-                        <outletCollection property="image" destination="5Ss-5m-G7E" collectionClass="NSMutableArray" id="19I-dZ-qhH"/>
-                        <outletCollection property="image" destination="Fp9-Uk-7gh" collectionClass="NSMutableArray" id="lsV-bR-QPw"/>
-                        <outletCollection property="image" destination="NOv-hX-tHL" collectionClass="NSMutableArray" id="s1C-mz-PIG"/>
-                        <outletCollection property="image" destination="FtL-OL-Yzy" collectionClass="NSMutableArray" id="8Gc-Kz-lyc"/>
+                        <outletCollection property="oxImage" destination="qj0-FP-nQb" collectionClass="NSMutableArray" id="k6S-Z0-MA4"/>
+                        <outletCollection property="oxImage" destination="EKf-Ll-TYU" collectionClass="NSMutableArray" id="pY5-Zd-MbA"/>
+                        <outletCollection property="oxImage" destination="BT1-u9-tgn" collectionClass="NSMutableArray" id="bbl-sr-SXv"/>
+                        <outletCollection property="oxImage" destination="Ae1-ef-ZRt" collectionClass="NSMutableArray" id="ZmL-aw-ALD"/>
+                        <outletCollection property="oxImage" destination="qh1-yS-Nqz" collectionClass="NSMutableArray" id="0OL-qt-kAE"/>
+                        <outletCollection property="oxImage" destination="5Ss-5m-G7E" collectionClass="NSMutableArray" id="19I-dZ-qhH"/>
+                        <outletCollection property="oxImage" destination="Fp9-Uk-7gh" collectionClass="NSMutableArray" id="lsV-bR-QPw"/>
+                        <outletCollection property="oxImage" destination="NOv-hX-tHL" collectionClass="NSMutableArray" id="s1C-mz-PIG"/>
+                        <outletCollection property="oxImage" destination="FtL-OL-Yzy" collectionClass="NSMutableArray" id="8Gc-Kz-lyc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dh-le-mqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -350,13 +350,6 @@
                                     <constraint firstAttribute="height" constant="150" id="dbb-wF-ije"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPJ-SG-YTc">
-                                <rect key="frame" x="186" y="602" width="29" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -370,10 +363,9 @@
                         <viewLayoutGuide key="safeArea" id="l0a-mE-2f2"/>
                     </view>
                     <connections>
-                        <outlet property="momoIcon" destination="YFY-Ed-He3" id="QQE-uI-93V"/>
-                        <outlet property="shiinaIcon" destination="QPJ-Ed-g9R" id="cPO-G4-XJA"/>
-                        <outlet property="soraIcon" destination="IB0-BW-7pw" id="hrp-Rm-ABA"/>
-                        <outlet property="text" destination="xPJ-SG-YTc" id="oDi-mH-nd7"/>
+                        <outlet property="momoImage" destination="YFY-Ed-He3" id="QQE-uI-93V"/>
+                        <outlet property="shiinaImage" destination="QPJ-Ed-g9R" id="cPO-G4-XJA"/>
+                        <outlet property="soraImage" destination="IB0-BW-7pw" id="hrp-Rm-ABA"/>
                         <segue destination="AxJ-z4-N1L" kind="show" id="FQx-h0-2sF"/>
                     </connections>
                 </viewController>
