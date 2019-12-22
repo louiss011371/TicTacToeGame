@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rDk-gO-PwI">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rDk-gO-PwI">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,32 +12,32 @@
             <objects>
                 <viewController id="AxJ-z4-N1L" customClass="GameViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hQm-RW-D1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXK-DT-FpH">
-                                <rect key="frame" x="0.66666666666665719" y="234" width="374" height="444"/>
+                                <rect key="frame" x="20" y="276" width="374" height="444"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vFs-uW-epW">
                                         <rect key="frame" x="12" y="20" width="350" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj0-FP-nQb">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj0-FP-nQb">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Vfj-MS-0yF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKf-Ll-TYU">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Iri-aw-7JC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BT1-u9-tgn">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="wfF-UQ-zfT"/>
                                                 </connections>
@@ -58,21 +57,21 @@
                                         <subviews>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-ef-ZRt">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="bPx-ZW-H7b"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qh1-yS-Nqz">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="Hpo-KB-AOe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-5m-G7E">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="IQD-RX-ZjD"/>
                                                 </connections>
@@ -120,21 +119,21 @@
                                         <subviews>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fp9-Uk-7gh">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="bNO-nP-Vhf"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOv-hX-tHL">
                                                 <rect key="frame" x="120" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="3vJ-MJ-73m"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtL-OL-Yzy">
                                                 <rect key="frame" x="240" y="0.0" width="110" height="100"/>
-                                                <state key="normal" image="momo"/>
+                                                <state key="normal" image="momoimage"/>
                                                 <connections>
                                                     <action selector="tapDetected:" destination="AxJ-z4-N1L" eventType="touchUpInside" id="vUo-1A-FBM"/>
                                                 </connections>
@@ -180,13 +179,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAN-NQ-x9Y">
-                                <rect key="frame" x="160" y="103" width="55" height="20.333333333333329"/>
+                                <rect key="frame" x="160" y="103" width="94" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="momo" translatesAutoresizingMaskIntoConstraints="NO" id="N36-lw-teU">
-                                <rect key="frame" x="137" y="126" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="momoimage" translatesAutoresizingMaskIntoConstraints="NO" id="N36-lw-teU">
+                                <rect key="frame" x="137" y="126" width="139" height="142"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5y8-BR-2EH">
                                 <rect key="frame" x="20" y="102" width="56" height="20.333333333333329"/>
@@ -237,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dh-le-mqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3023" y="36"/>
+            <point key="canvasLocation" x="862" y="43"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Flj-cF-cHz">
@@ -245,7 +244,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rDk-gO-PwI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ga8-bS-Z5L">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -255,27 +254,27 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdb-ms-7v8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="-653.57142857142856"/>
+            <point key="canvasLocation" x="-790" y="-655"/>
         </scene>
         <!--Home-->
         <scene sceneID="Hdr-z3-mbb">
             <objects>
                 <viewController id="C3T-7I-5Tb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HoF-wd-rAX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trysaillogo" translatesAutoresizingMaskIntoConstraints="NO" id="jNF-qz-5ze">
-                                <rect key="frame" x="27" y="119" width="332" height="117"/>
+                                <rect key="frame" x="27" y="119" width="367" height="201"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5th Anniversary Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzX-Ew-pXP">
-                                <rect key="frame" x="27" y="244" width="332" height="36"/>
+                                <rect key="frame" x="27" y="328" width="371" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-Dn-IdK">
-                                <rect key="frame" x="136" y="478" width="103" height="72"/>
+                                <rect key="frame" x="155.66666666666666" y="562" width="102.99999999999997" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -302,18 +301,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGl-6X-K7q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="-654.67980295566508"/>
+            <point key="canvasLocation" x="17" y="-655"/>
         </scene>
         <!--Game Mode Select-->
         <scene sceneID="kzP-em-UwR">
             <objects>
                 <viewController title="Game Mode Select" id="j2D-kZ-zZT" customClass="SelectGameModeViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mbN-Rh-KKe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-OW-MmD">
-                                <rect key="frame" x="137" y="337" width="101" height="138"/>
+                                <rect key="frame" x="156.66666666666666" y="379" width="100.99999999999997" height="138"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1v-Y1-aOO">
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
@@ -344,86 +343,148 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FgS-Se-ovS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="43"/>
+            <point key="canvasLocation" x="862" y="-655"/>
         </scene>
         <!--Character-->
         <scene sceneID="S0i-O6-3Ag">
             <objects>
                 <viewController id="35d-il-4V0" customClass="CharacterViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BrU-eN-6zI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select you favourite character" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbl-WL-gas">
-                                <rect key="frame" x="20" y="127.00000000000001" width="335" height="21.666666666666671"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your favourite character" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbl-WL-gas">
+                                <rect key="frame" x="20" y="127.00000000000001" width="374" height="21.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qjn-XO-ySC">
-                                <rect key="frame" x="20" y="257.33333333333331" width="335" height="150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qjn-XO-ySC">
+                                <rect key="frame" x="42" y="225" width="330" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFY-Ed-He3">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.66666666666667" height="150"/>
-                                        <state key="normal" image="momo"/>
+                                        <rect key="frame" x="0.0" y="10" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="I45-Sx-WfR"/>
+                                            <constraint firstAttribute="height" constant="100" id="r3k-fL-FNG"/>
+                                        </constraints>
+                                        <state key="normal" image="shiinaimage"/>
                                         <connections>
                                             <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="QbL-5c-4xU"/>
-                                            <segue destination="AxJ-z4-N1L" kind="show" identifier="GameVC" id="M9y-63-UDe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB0-BW-7pw">
-                                        <rect key="frame" x="116.66666666666666" y="0.0" width="101.66666666666666" height="150"/>
-                                        <state key="normal" image="sora"/>
+                                        <rect key="frame" x="115" y="10" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="qBP-X6-Pmo"/>
+                                            <constraint firstAttribute="width" constant="100" id="ype-oP-PEu"/>
+                                        </constraints>
+                                        <state key="normal" image="momoimage"/>
                                         <connections>
                                             <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="i1o-Jn-u0t"/>
-                                            <segue destination="AxJ-z4-N1L" kind="show" identifier="GameVC" id="7ms-0q-d8n"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPJ-Ed-g9R">
-                                        <rect key="frame" x="233.33333333333334" y="0.0" width="101.66666666666666" height="150"/>
-                                        <state key="normal" title="Button" image="shiina"/>
+                                        <rect key="frame" x="230" y="10" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Myd-el-w05"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="soraimage"/>
                                         <connections>
                                             <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="Axo-GZ-6xG"/>
-                                            <segue destination="AxJ-z4-N1L" kind="show" identifier="GameVC" id="LII-WF-PaR"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="dbb-wF-ije"/>
+                                    <constraint firstAttribute="height" constant="120" id="dbb-wF-ije"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1Kj-HB-C0K">
+                                <rect key="frame" x="42" y="385" width="330" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSi-i3-ZBw">
+                                        <rect key="frame" x="0.0" y="10" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Fxq-l0-Jb8"/>
+                                            <constraint firstAttribute="width" constant="100" id="hU7-d6-7LM"/>
+                                        </constraints>
+                                        <state key="normal" image="shiinaicon"/>
+                                        <connections>
+                                            <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="48m-m5-loc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utR-xf-XhW">
+                                        <rect key="frame" x="115" y="10" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="1cI-OZ-qoZ"/>
+                                            <constraint firstAttribute="width" constant="100" id="FfI-N4-obz"/>
+                                        </constraints>
+                                        <state key="normal" image="momoicon"/>
+                                        <connections>
+                                            <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="z4q-7o-29e"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL2-fQ-jdX">
+                                        <rect key="frame" x="230" y="10" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="ok6-Ug-Y49"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="soraicon"/>
+                                        <connections>
+                                            <action selector="iconTapDetected:" destination="35d-il-4V0" eventType="touchUpInside" id="v4t-6f-S4X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="taj-NQ-xVl"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pp9-ir-Haj">
+                                <rect key="frame" x="179.66666666666666" y="590" width="55" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="goToGameView:" destination="35d-il-4V0" eventType="touchUpInside" id="uAC-uP-5ER"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Qjn-XO-ySC" firstAttribute="top" secondItem="qbl-WL-gas" secondAttribute="bottom" constant="108.67" id="5WP-F8-qWF"/>
-                            <constraint firstItem="Qjn-XO-ySC" firstAttribute="leading" secondItem="l0a-mE-2f2" secondAttribute="leading" constant="20" id="6KT-PI-0LG"/>
+                            <constraint firstItem="Qjn-XO-ySC" firstAttribute="top" secondItem="qbl-WL-gas" secondAttribute="bottom" constant="76.333333333333314" id="5WP-F8-qWF"/>
+                            <constraint firstItem="pp9-ir-Haj" firstAttribute="centerX" secondItem="BrU-eN-6zI" secondAttribute="centerX" id="6vS-sb-FSb"/>
                             <constraint firstItem="qbl-WL-gas" firstAttribute="leading" secondItem="l0a-mE-2f2" secondAttribute="leading" constant="20" id="Av9-MV-hup"/>
+                            <constraint firstItem="Qjn-XO-ySC" firstAttribute="centerX" secondItem="BrU-eN-6zI" secondAttribute="centerX" id="I3k-C0-rc7"/>
                             <constraint firstItem="l0a-mE-2f2" firstAttribute="trailing" secondItem="qbl-WL-gas" secondAttribute="trailing" constant="20" id="IzK-ws-XET"/>
+                            <constraint firstItem="1Kj-HB-C0K" firstAttribute="centerX" secondItem="BrU-eN-6zI" secondAttribute="centerX" id="VkC-0y-ObY"/>
                             <constraint firstItem="qbl-WL-gas" firstAttribute="top" secondItem="l0a-mE-2f2" secondAttribute="top" constant="39" id="aDG-9a-aJP"/>
-                            <constraint firstItem="l0a-mE-2f2" firstAttribute="trailing" secondItem="Qjn-XO-ySC" secondAttribute="trailing" constant="20" id="apw-Zu-lUQ"/>
+                            <constraint firstItem="pp9-ir-Haj" firstAttribute="top" secondItem="1Kj-HB-C0K" secondAttribute="bottom" constant="85" id="kXn-bh-uds"/>
+                            <constraint firstItem="1Kj-HB-C0K" firstAttribute="top" secondItem="Qjn-XO-ySC" secondAttribute="bottom" constant="40" id="zhE-gw-DRt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l0a-mE-2f2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Character" id="fRK-Kr-xc0"/>
                     <connections>
-                        <outlet property="momoImage" destination="YFY-Ed-He3" id="QQE-uI-93V"/>
-                        <outlet property="shiinaImage" destination="QPJ-Ed-g9R" id="cPO-G4-XJA"/>
-                        <outlet property="soraImage" destination="IB0-BW-7pw" id="hrp-Rm-ABA"/>
-                        <segue destination="AxJ-z4-N1L" kind="show" id="FQx-h0-2sF"/>
+                        <outlet property="momoIcon" destination="utR-xf-XhW" id="Dhm-Bp-v50"/>
+                        <outlet property="momoImage" destination="IB0-BW-7pw" id="S5u-dK-7Ai"/>
+                        <outlet property="shiinaIcon" destination="gSi-i3-ZBw" id="VER-nO-wtu"/>
+                        <outlet property="shiinaImage" destination="YFY-Ed-He3" id="SKB-bb-bDB"/>
+                        <outlet property="soraIcon" destination="aL2-fQ-jdX" id="LE9-mX-uw9"/>
+                        <outlet property="soraImage" destination="QPJ-Ed-g9R" id="m2z-zU-zij"/>
+                        <segue destination="AxJ-z4-N1L" kind="show" identifier="playerName" id="qNW-4d-L5A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuX-QD-MwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1975" y="43"/>
+            <point key="canvasLocation" x="16.800000000000001" y="42.857142857142861"/>
         </scene>
     </scenes>
     <resources>
-        <image name="momo" width="480" height="480"/>
-        <image name="shiina" width="800" height="800"/>
-        <image name="sora" width="307" height="307"/>
+        <image name="momoicon" width="238" height="238"/>
+        <image name="momoimage" width="480" height="480"/>
+        <image name="shiinaicon" width="285" height="285"/>
+        <image name="shiinaimage" width="800" height="800"/>
+        <image name="soraicon" width="670" height="670"/>
+        <image name="soraimage" width="307" height="307"/>
         <image name="trysaillogo" width="571" height="300"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="LII-WF-PaR"/>
-    </inferredMetricsTieBreakers>
 </document>

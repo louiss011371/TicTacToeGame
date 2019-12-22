@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+import QuartzCore
 
 
 class GameViewController: UIViewController{
@@ -67,8 +68,6 @@ class GameViewController: UIViewController{
         }
         
     }
-    
-    
     // i am back. XD
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +77,10 @@ class GameViewController: UIViewController{
         winnerImage.image = nil
         winnerLabel.isHidden = true
         
-        for oxButton in oxImage {
-            oxButton.setImage(nil, for: .normal)
+//        winnerImage.layer.cornerRadius = 0.8 * winnerImage.bounds.size.width
+        
+        for oxImage in oxImage {
+            oxImage.setImage(nil, for: .normal)
         }
     }
     
