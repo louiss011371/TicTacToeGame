@@ -220,6 +220,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tic-Tac-Toe" id="NY5-9b-Ths"/>
                     <connections>
+                        <outlet property="backToCharacter" destination="NY5-9b-Ths" id="F0a-lZ-ETR"/>
                         <outlet property="playerNameText" destination="dS4-PZ-JeU" id="9BY-hf-4UC"/>
                         <outlet property="winnerImage" destination="N36-lw-teU" id="c3l-Bf-WEW"/>
                         <outlet property="winnerLabel" destination="CAN-NQ-x9Y" id="qUJ-qJ-qZO"/>
@@ -466,6 +467,7 @@
                     <connections>
                         <outlet property="momoIcon" destination="utR-xf-XhW" id="Dhm-Bp-v50"/>
                         <outlet property="momoImage" destination="IB0-BW-7pw" id="S5u-dK-7Ai"/>
+                        <outlet property="playBtn" destination="pp9-ir-Haj" id="SHr-md-U3S"/>
                         <outlet property="shiinaIcon" destination="gSi-i3-ZBw" id="VER-nO-wtu"/>
                         <outlet property="shiinaImage" destination="YFY-Ed-He3" id="SKB-bb-bDB"/>
                         <outlet property="soraIcon" destination="aL2-fQ-jdX" id="LE9-mX-uw9"/>

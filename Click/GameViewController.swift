@@ -15,6 +15,7 @@ class GameViewController: UIViewController{
     
     @IBOutlet weak var playerNameText: UILabel!
     
+    
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet var winnerImage: UIImageView!
     
@@ -23,6 +24,7 @@ class GameViewController: UIViewController{
     var stepCount = 0
     var playerTurn :PlayerTurn = .player
    
+    @IBOutlet weak var backToCharacter: UINavigationItem!
     // player, boss , draw game image
     var playerImage = ""
     var bossImage = "pandagoro"

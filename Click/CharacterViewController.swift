@@ -20,10 +20,17 @@ class CharacterViewController: UIViewController {
     @IBOutlet weak var momoIcon: UIButton!
     @IBOutlet weak var soraIcon: UIButton!
     
+    // game start btn
+    @IBOutlet weak var playBtn: UIButton!
+    
+    // store selected image game for passing to game view
     var imageNameText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // play button enable
+        playBtn.isEnabled = false
         // set all image into a array list
         let circleImage = [shiinaImage,momoImage,soraImage,
                            shiinaIcon,momoIcon,soraIcon]
@@ -33,8 +40,10 @@ class CharacterViewController: UIViewController {
             applyRoundCorder(images!)
         }
     }
-    
     @IBAction func iconTapDetected(_ sender: UIButton) {
+        
+        playBtn.isEnabled = true
+        
         switch sender.self {
         case shiinaImage:
             imageNameText = "shiinaimage"
@@ -52,6 +61,7 @@ class CharacterViewController: UIViewController {
             return
         }
     }
+    
     // pass imageText when play button is clicked
     @IBAction func playBtn(_ sender: UIButton) {
         performSegue(withIdentifier: "playerName", sender: self)
@@ -60,6 +70,7 @@ class CharacterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let gameVC = segue.destination as? GameViewController
         gameVC?.playerImage = self.imageNameText
+        
     }
     // set circular button method
     func applyRoundCorder(_ object:AnyObject) {
