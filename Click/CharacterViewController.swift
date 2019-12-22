@@ -10,30 +10,30 @@ import UIKit
 
 class CharacterViewController: UIViewController {
     
-    // character image
+    // first line character image
     @IBOutlet weak var shiinaImage : UIButton!
     @IBOutlet weak var momoImage : UIButton!
     @IBOutlet weak var soraImage : UIButton!
     
-    
+    // second line character image
     @IBOutlet weak var shiinaIcon: UIButton!
     @IBOutlet weak var momoIcon: UIButton!
     @IBOutlet weak var soraIcon: UIButton!
     
     var imageNameText = ""
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set all image into a array list
+        let circleImage = [shiinaImage,momoImage,soraImage,
+                           shiinaIcon,momoIcon,soraIcon]
         
-        applyRoundCorder(shiinaImage)
-        applyRoundCorder(momoImage)
-        applyRoundCorder(shiinaImage)
-        applyRoundCorder(soraIcon)
-        applyRoundCorder(soraIcon)
-        applyRoundCorder(shiinaIcon)
-
+        // button circular function
+        for images in circleImage {
+            applyRoundCorder(images!)
+        }
     }
-
+    
     @IBAction func iconTapDetected(_ sender: UIButton) {
         switch sender.self {
         case shiinaImage:
@@ -41,7 +41,7 @@ class CharacterViewController: UIViewController {
         case momoImage:
             imageNameText = "momoimage"
         case soraImage:
-            imageNameText = "soraImage"
+            imageNameText = "soraimage"
         case shiinaIcon:
             imageNameText = "shiinaicon"
         case momoIcon:
@@ -52,27 +52,18 @@ class CharacterViewController: UIViewController {
             return
         }
     }
-    @IBAction func goToGameView(_ sender: UIButton) {
-       performSegue(withIdentifier: "playerName", sender: self)
+    // pass imageText when play button is clicked
+    @IBAction func playBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "playerName", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-            let gameVC = segue.destination as? GameViewController
-            gameVC?.playerImage = self.imageNameText
-        }
-
-       func applyRoundCorder(_ object:AnyObject) {
-                object.layer.cornerRadius = object.frame.width / 2
-                object.layer.masksToBounds = true
-       }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let gameVC = segue.destination as? GameViewController
+        gameVC?.playerImage = self.imageNameText
     }
-    */
-
+    // set circular button method
+    func applyRoundCorder(_ object:AnyObject) {
+        object.layer.cornerRadius = object.frame.width / 2
+        object.layer.masksToBounds = true
+    }
 }

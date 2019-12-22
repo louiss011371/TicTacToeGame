@@ -444,7 +444,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="goToGameView:" destination="35d-il-4V0" eventType="touchUpInside" id="uAC-uP-5ER"/>
+                                    <action selector="playBtn:" destination="35d-il-4V0" eventType="touchUpInside" id="Qmn-lu-GIs"/>
                                 </connections>
                             </button>
                         </subviews>

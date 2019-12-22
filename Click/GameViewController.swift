@@ -66,9 +66,8 @@ class GameViewController: UIViewController{
                 return
             }
         }
-        
     }
-    // i am back. XD
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,10 +76,11 @@ class GameViewController: UIViewController{
         winnerImage.image = nil
         winnerLabel.isHidden = true
         
-//        winnerImage.layer.cornerRadius = 0.8 * winnerImage.bounds.size.width
-        
+        applyRoundCorder(winnerImage)
+
         for oxImage in oxImage {
             oxImage.setImage(nil, for: .normal)
+            applyRoundCorder(oxImage)
         }
     }
     
@@ -88,45 +88,55 @@ class GameViewController: UIViewController{
         super.viewDidAppear(animated)
 
         print(playerImage)
-        playerNameText.text = playerImage
+        if playerImage.contains("momo"){
+             playerNameText.text = "momo"
+        }else if playerImage.contains("sora") {
+             playerNameText.text = "sora"
+        }else if playerImage.contains("shiina"){
+             playerNameText.text = "shiina"
+        }else {
+            return
+        }
+       
     }
-    
+    // update O X icon
     private func updateOorX(oxButton: UIButton, forPlayer player: PlayerTurn) {
-        var chickedPerson: String
+        var whoClicked: String
         
         switch player {
         case .player:
-            chickedPerson = "O"
+            whoClicked = "O"
             oxButton.setImage(UIImage(named: "\(playerImage)"), for: .normal)
         case .boss:
-            chickedPerson = "X"
+            whoClicked = "X"
             oxButton.setImage(UIImage(named: "\(bossImage)"), for: .normal)
         }
 
             switch oxButton.tag {
             case 0:
-                board[0,0] = chickedPerson
+                board[0,0] = whoClicked
             case 1:
-                board[0,1] = chickedPerson
+                board[0,1] = whoClicked
             case 2:
-                board[0,2] = chickedPerson
+                board[0,2] = whoClicked
             case 3:
-                board[1,0] = chickedPerson
+                board[1,0] = whoClicked
             case 4:
-                board[1,1] = chickedPerson
+                board[1,1] = whoClicked
             case 5:
-                board[1,2] = chickedPerson
+                board[1,2] = whoClicked
             case 6:
-                board[2,0] = chickedPerson
+                board[2,0] = whoClicked
             case 7:
-                board[2,1] = chickedPerson
+                board[2,1] = whoClicked
             case 8:
-                board[2,2] = chickedPerson
+                board[2,2] = whoClicked
             default:
                 return
             }
     }
     
+    // rule
     func winRule() -> String? {
         var result : String? = nil
         
@@ -168,19 +178,21 @@ class GameViewController: UIViewController{
         
         return result
     }
-    
+    // detect game over or not
     func continuesClickDetected(_ enable: Bool) {
            for button in oxImage {
                button.isUserInteractionEnabled = enable
            }
        }
-    
+    // detect any button is clicked
     func clickDetected(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isUserInteractionEnabled = false
-            
         }
     }
-    
-    // detect selected character
+    // set circular button method
+    func applyRoundCorder(_ object:AnyObject) {
+        object.layer.cornerRadius = object.frame.width / 2
+        object.layer.masksToBounds = true
+    }
 }
