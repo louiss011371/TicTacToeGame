@@ -44,7 +44,7 @@ class CharacterViewController: UIViewController {
         
         playBtn.isEnabled = true
         
-        switch sender.self {
+        switch sender {
         case shiinaImage:
             imageNameText = "shiinaimage"
         case momoImage:
@@ -69,7 +69,7 @@ class CharacterViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let gameVC = segue.destination as? GameViewController
-        gameVC?.playerImage = self.imageNameText
+        gameVC?.playerImage = imageNameText
         
     }
     // set circular button method
