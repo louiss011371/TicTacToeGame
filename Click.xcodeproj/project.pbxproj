@@ -18,6 +18,7 @@
 		B597FA6E237EED9C00C0A70D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597FA6D237EED9C00C0A70D /* GameViewController.swift */; };
 		B5D424FC23AE534E00746CB5 /* CharacterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D424FB23AE534E00746CB5 /* CharacterDelegate.swift */; };
 		B5D424FE23AF1D3D00746CB5 /* SelectGameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D424FD23AF1D3D00746CB5 /* SelectGameModeViewController.swift */; };
+		B5E2767223B1204C00FD8444 /* VSBossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2767123B1204C00FD8444 /* VSBossViewController.swift */; };
 		B5FC36F023AE523300833A59 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FC36EF23AE523300833A59 /* CharacterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		B597FA6D237EED9C00C0A70D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B5D424FB23AE534E00746CB5 /* CharacterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDelegate.swift; sourceTree = "<group>"; };
 		B5D424FD23AF1D3D00746CB5 /* SelectGameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameModeViewController.swift; sourceTree = "<group>"; };
+		B5E2767123B1204C00FD8444 /* VSBossViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSBossViewController.swift; sourceTree = "<group>"; };
 		B5FC36EF23AE523300833A59 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				B5012D2022F177D300899585 /* Main.storyboard */,
 				B56C71BF23AC7C2C00167BC6 /* GameMap.swift */,
 				B5D424FB23AE534E00746CB5 /* CharacterDelegate.swift */,
+				B5E2767123B1204C00FD8444 /* VSBossViewController.swift */,
 				B5D424FD23AF1D3D00746CB5 /* SelectGameModeViewController.swift */,
 				B597FA6D237EED9C00C0A70D /* GameViewController.swift */,
 				B5FC36EF23AE523300833A59 /* CharacterViewController.swift */,
@@ -277,6 +280,7 @@
 				B56C71C223AC7CB600167BC6 /* PlayerTurn.swift in Sources */,
 				B5D424FE23AF1D3D00746CB5 /* SelectGameModeViewController.swift in Sources */,
 				B5D424FC23AE534E00746CB5 /* CharacterDelegate.swift in Sources */,
+				B5E2767223B1204C00FD8444 /* VSBossViewController.swift in Sources */,
 				B5012D1D22F177D300899585 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
