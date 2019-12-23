@@ -1,21 +1,21 @@
 //
-//  gameMap.swift
+//  GameMap.swift
 //  Click
 //
-//  Created by Louis Tsui on 15/12/2019.
+//  Created by Louis Tsui on 20/12/2019.
 //  Copyright © 2019 Louis Tsui. All rights reserved.
 //
 
 import UIKit
 
-class GameMap: NSObject {
-
-    var row : Int
-    var column : Int
-    
-    init(row: Int, column: Int) {
-        self.row = row
-        self.column = column
+struct GameMap {
+    var board = [["","",""],["","",""],["","",""]]
+    subscript(x: Int, y: Int) -> String {
+        get {
+            return board[x][y]
+        }
+        set {
+            board[x][y] = newValue
+        }
     }
 }
-
