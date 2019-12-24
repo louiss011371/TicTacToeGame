@@ -8,6 +8,16 @@
 
 import UIKit
 
+struct Player {
+    let name: String
+    let image: UIImage
+}
+
+enum PlayMode {
+    case onePlay(Player)
+    case twoPlay(oneP: Player, twoP: Player)
+}
+
 class CharacterViewController: UIViewController {
     
     // first line character image

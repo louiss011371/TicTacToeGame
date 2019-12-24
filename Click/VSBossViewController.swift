@@ -9,370 +9,277 @@
 import UIKit
 
 class VSBossViewController: UIViewController {
+    var receiveredCharacter : CharacterViewController?
+     
+     @IBOutlet weak var playerNameText: UILabel!
+     
+     @IBOutlet weak var winnerLabel: UILabel!
+     @IBOutlet var winnerImage: UIImageView!
+     
+//     @IBOutlet var oxImages: [UIButton]!
+     var board = GameMap()
+     var stepCount = 0
+     var playerTurn :PlayerTurn = .player
+    
+    @IBAction func eight(_ sender: UIButton) {
+        print("click")
+    }
+    
+    @IBOutlet weak var image0: UIImageView!
+    @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var image4: UIImageView!
+    @IBOutlet weak var image5: UIImageView!
+    @IBOutlet weak var image6: UIImageView!
+    @IBOutlet weak var image7: UIImageView!
+    @IBOutlet weak var image8: UIImageView!
+    
+    
+     @IBOutlet var oxImages: [UIImageView]!
+    
+     @IBOutlet weak var backToCharacter: UINavigationItem!
+     // player, boss , draw game image
+     var playerImage = "soraimage"
+     var bossImage = "pandagoro"
+     var drawImage = "draw"
+     
+    
+    
+    
+   
+    
+  
+         // check any button is clicked before next turn
+//
+//    if let results = winRule() {
+//        winnerImage.isHidden = false
+//        if results == "O" {
+//            winnerLabel.isHidden = false
+//            print("winner is O")
+//            winnerImage.image = UIImage(named: playerImage)
+//            continuesClickDetected(false)
+//        }else if results == "X"{
+//            winnerLabel.isHidden = false
+//            print("winner is X")
+//            winnerImage.image = UIImage(named: bossImage)
+//            continuesClickDetected(false)
+//        }else if results == "🔺" && stepCount == 9  {
+//            winnerImage.image = UIImage(named: drawImage)
+//            print("draw")
+//        }else{
+//            return
+//        }
+//    }
+    
+     
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         
+         playerNameText.text = ""
+//         winnerImage.isHidden = true
+       //  winnerImage.image = nil
+         winnerLabel.isHidden = true
+        
+       
+       
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        
+        //image0.isUserInteractionEnabled = true
+        //image0.addGestureRecognizer(tapGestureRecognizer)
+      for oximage in oxImages {
+         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+                 applyRoundCorder(oximage)
+                 oximage.isUserInteractionEnabled = true
+                 oximage.addGestureRecognizer(tapGestureRecognizer)
+             }
+         
+//         applyRoundCorder(winnerImage)
 
-    @IBOutlet var button0: UIButton!
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var button3: UIButton!
-    @IBOutlet var button4: UIButton!
-    @IBOutlet var button5: UIButton!
-    @IBOutlet var button6: UIButton!
-    @IBOutlet var button7: UIButton!
-    @IBOutlet var button8: UIButton!
+//         for oxImage in oxImages {
+//             oxImage.setImage(nil, for: .normal)
+//             applyRoundCorder(oxImage)
+//         }
+     }
     
-    @IBOutlet var resetbtn: UIButton!
-    @IBOutlet var output: UILabel!
-    
-    var gameOver: Bool = false
-    var plays: [Int: Int] = [:]
-    var isForkingMove: Bool = false
-    
-    var timer: Timer = Timer()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        reset()
-      //  timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: "changeColors", userInfo: nil, repeats: true)
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        print("tapped")
+        tappedImage.image = UIImage(named: "soraimage")
+        print("sora")
+
+        
+//        for oximage in oxImages {
+//            imageViewClickable(oximage, tap: tapGestureRecognizer)
+//            print("click okokok")
+//        }
+        // Your action
     }
+     
+     override func viewDidAppear(_ animated: Bool) {
+         super.viewDidAppear(animated)
+
     
-    func changeColors() {
-        
-        button0.titleLabel!.textColor = plays[0] == 0 ? UIColor.red : (plays[0] == 1 ? UIColor.green : UIColor.black)
-        button1.titleLabel!.textColor = plays[1] == 0 ? UIColor.red : (plays[1] == 1 ? UIColor.green : UIColor.black)
-        button2.titleLabel!.textColor = plays[2] == 0 ? UIColor.red : (plays[2] == 1 ? UIColor.green : UIColor.black)
-        button3.titleLabel!.textColor = plays[3] == 0 ? UIColor.red : (plays[3] == 1 ? UIColor.green : UIColor.black)
-        button4.titleLabel!.textColor = plays[4] == 0 ? UIColor.red : (plays[4] == 1 ? UIColor.green : UIColor.black)
-        button5.titleLabel!.textColor = plays[5] == 0 ? UIColor.red : (plays[5] == 1 ? UIColor.green : UIColor.black)
-        button6.titleLabel!.textColor = plays[6] == 0 ? UIColor.red : (plays[6] == 1 ? UIColor.green : UIColor.black)
-        button7.titleLabel!.textColor = plays[7] == 0 ? UIColor.red : (plays[7] == 1 ? UIColor.green : UIColor.black)
-        button8.titleLabel!.textColor = plays[8] == 0 ? UIColor.red : (plays[8] == 1 ? UIColor.green : UIColor.black)
-        
-    }
-    
-    @IBAction func btnClicked(sender: UIButton) {
-        if !gameOver {
-            var gridToPlace = 0
-            if sender == button0 { gridToPlace = 0 }
-            if sender == button1 { gridToPlace = 1 }
-            if sender == button2 { gridToPlace = 2 }
-            if sender == button3 { gridToPlace = 3 }
-            if sender == button4 { gridToPlace = 4 }
-            if sender == button5 { gridToPlace = 5 }
-            if sender == button6 { gridToPlace = 6 }
-            if sender == button7 { gridToPlace = 7 }
-            if sender == button8 { gridToPlace = 8 }
-            
-            plays[gridToPlace] = plays[gridToPlace] != 0 ? 1 : 0
-            if plays[gridToPlace] == 1 {
-                resetView()
-                checkForWin()
-                AIDoesTurn()
-                resetView()
-            }
-        }
-    }
-    
-    func checkForWin() {
-        
-        if
-            (plays[0] == 1 && plays[1] == 1 && plays[2] == 1) ||
-            (plays[3] == 1 && plays[4] == 1 && plays[5] == 1) ||
-            (plays[6] == 1 && plays[7] == 1 && plays[8] == 1) ||
-            (plays[0] == 1 && plays[3] == 1 && plays[6] == 1) ||
-            (plays[1] == 1 && plays[4] == 1 && plays[7] == 1) ||
-            (plays[2] == 1 && plays[5] == 1 && plays[8] == 1) ||
-            (plays[0] == 1 && plays[4] == 1 && plays[8] == 1) ||
-            (plays[2] == 1 && plays[4] == 1 && plays[6] == 1) &&
-            !gameOver
-        {
-            gameOver = true
-            resetbtn.isHidden = false
-            output.isHidden = false
-            output.text = "The user (X) won!"
-            print("The user (X) won!")
-            return
-        }
-        
-        if
-            (plays[0] == 0 && plays[1] == 0 && plays[2] == 0) ||
-            (plays[3] == 0 && plays[4] == 0 && plays[5] == 0) ||
-            (plays[6] == 0 && plays[7] == 0 && plays[8] == 0) ||
-            (plays[0] == 0 && plays[3] == 0 && plays[6] == 0) ||
-            (plays[1] == 0 && plays[4] == 0 && plays[7] == 0) ||
-            (plays[2] == 0 && plays[5] == 0 && plays[8] == 0) ||
-            (plays[0] == 0 && plays[4] == 0 && plays[8] == 0) ||
-            (plays[2] == 0 && plays[4] == 0 && plays[6] == 0) &&
-            !gameOver
-        {
-            gameOver = true
-            resetbtn.isHidden = false
-            output.isHidden = false
-            output.text = "The computer (O) won!"
-            print("The computer (O) won!")
-            return
-        }
-        
-        if !plays.values.contains(-1) {
-            gameOver = true
-            resetbtn.isHidden = false
-            output.isHidden = false
-            output.text = "We are in a draw!"
-            print("We are in a draw!")
-        }
-        
-    }
-    
-    func resetView() {
-        
-        if !gameOver {
-            button0.setTitle(plays[0] == 0 ? "O": (plays[0] == 1 ? "X" : button0.titleLabel!.text!), for: .normal)
-            button1.setTitle(plays[1] == 0 ? "O": (plays[1] == 1 ? "X" : button1.titleLabel!.text!), for: .normal)
-            button2.setTitle(plays[2] == 0 ? "O": (plays[2] == 1 ? "X" : button2.titleLabel!.text!), for: .normal)
-            button3.setTitle(plays[3] == 0 ? "O": (plays[3] == 1 ? "X" : button3.titleLabel!.text!), for: .normal)
-            button4.setTitle(plays[4] == 0 ? "O": (plays[4] == 1 ? "X" : button4.titleLabel!.text!), for: .normal)
-            button5.setTitle(plays[5] == 0 ? "O": (plays[5] == 1 ? "X" : button5.titleLabel!.text!), for: .normal)
-            button6.setTitle(plays[6] == 0 ? "O": (plays[6] == 1 ? "X" : button6.titleLabel!.text!), for: .normal)
-            button7.setTitle(plays[7] == 0 ? "O": (plays[7] == 1 ? "X" : button7.titleLabel!.text!), for: .normal)
-            button8.setTitle(plays[8] == 0 ? "O": (plays[8] == 1 ? "X" : button8.titleLabel!.text!), for: .normal)
-        }
-        
-    }
-    
-    @IBAction func resetClicked() {
-        reset()
-    }
-    
-    func reset() {
-        for i in 0...8 {
-            plays[i] = -1
-        }
-//        button0.setTitle("_", for: .normal)
-//        button1.setTitle("_", for: .normal)
-//        button2.setTitle("_", for: .normal)
-//        button3.setTitle("_", for: .normal)
-//        button4.setTitle("_", for: .normal)
-//        button5.setTitle("_", for: .normal)
-//        button6.setTitle("_", for: .normal)
-//        button7.setTitle("_", for: .normal)
-//        button8.setTitle("_", for: .normal)
-        gameOver = false
-        resetbtn.isHidden = true
-        output.isHidden = true
-    }
-    
-    func AIDoesTurn() {
-        var currentMove: Int!
-        //NOTE: Play sides
-        if plays[1] == -1 {
-            currentMove = 1
-        }
-        if plays[3] == -1 {
-            currentMove = 3
-        }
-        if plays[5] == -1 {
-            currentMove = 5
-        }
-        if plays[7] == -1 {
-            currentMove = 7
-        }
-        //NOTE: Play corners
-        if plays[0] == -1 {
-            currentMove = 0
-        }
-        if plays[2] == -1 {
-            currentMove = 2
-        }
-        if plays[6] == -1 {
-            currentMove = 6
-        }
-        if plays[8] == -1 {
-            currentMove = 8
-        }
-        //NOTE: Play center
-        if plays[4] == -1 {
-            currentMove = 4
-        }
-        //NOTE: Block classic forks
-        if plays[1] == 1 && plays[3] == 1 && plays[0] == -1 {
-            currentMove = 0
-        }
-        if plays[3] == 1 && plays[7] == 1 && plays[6] == -1 {
-            currentMove = 6
-        }
-        if plays[7] == 1 && plays[5] == 1 && plays[8] == -1 {
-            currentMove = 8
-        }
-        if plays[5] == 1 && plays[1] == 1 && plays[2] == -1 {
-            currentMove = 2
-        }
-        var tempCurrentMove = currentMove
-        var tempPlays = plays
-        tempPlays[8] = -1
-        if isForkingMove {
-            if plays[6] == 1 {
-                currentMove = 4
-            }
-            isForkingMove = false
-        }
-        if plays[8] == 1 && !tempPlays.values.contains(1) && !tempPlays.values.contains(0) {
-            isForkingMove = true
-            currentMove = 7
-        }
-        //NOTE: Block the user if they can win
-        if let winAvailable = twoInRow(player: "x", inArray: plays) {
-            currentMove = winAvailable
-      
-        }
-        //NOTE: Win if you can
-        if let winAvailable = twoInRow(player: "o", inArray: plays) {
-            currentMove = winAvailable
-           
-        }
-        //NOTE: Play the move
-        if let _ = currentMove {
-            plays[currentMove] = 0
-            resetView()
-            checkForWin()
-            resetView()
-        }
-    }
-    
-    func twoInRow(player: String, inArray: [Int: Int]) -> Int? {
-        
-        if player == "x" {
-            //On top
-            if inArray[0] == 1 && inArray[1] == 1 && inArray[2] == -1 {
-                return 2
-            }
-            if inArray[0] == 1 && inArray[1] == -1 && inArray[2] == 1 {
-                return 1
-            }
-            if inArray[0] == -1 && inArray[1] == 1 && inArray[2] == 1 {
-                return 0
-            }
-            //Middle
-            if inArray[3] == 1 && inArray[4] == 1 && inArray[5] == -1 {
-                return 5
-            }
-            if inArray[3] == 1 && inArray[4] == -1 && inArray[5] == 1 {
-                return 4
-            }
-            if inArray[3] == -1 && inArray[4] == 1 && inArray[5] == 1 {
-                return 3
-            }
-            //Bottom
-            if inArray[6] == 1 && inArray[7] == 1 && inArray[8] == -1 {
-                return 8
-            }
-            if inArray[6] == 1 && inArray[7] == -1 && inArray[8] == 1 {
-                return 7
-            }
-            if inArray[6] == -1 && inArray[7] == 1 && inArray[8] == 1 {
-                return 6
-            }
-            //Left
-            if inArray[0] == 1 && inArray[3] == 1 && inArray[6] == -1 {
-                return 6
-            }
-            if inArray[0] == 1 && inArray[3] == -1 && inArray[6] == 1 {
-                return 3
-            }
-            if inArray[0] == -1 && inArray[3] == 1 && inArray[6] == 1 {
-                return 0
-            }
-            //Middle
-            if inArray[1] == 1 && inArray[4] == 1 && inArray[7] == -1 {
-                return 7
-            }
-            if inArray[1] == 1 && inArray[4] == -1 && inArray[7] == 1 {
-                return 4
-            }
-            if inArray[1] == -1 && inArray[4] == 1 && inArray[7] == 1 {
-                return 1
-            }
-            //Right
-            if inArray[2] == 1 && inArray[5] == 1 && inArray[8] == -1 {
-                return 8
-            }
-            if inArray[2] == 1 && inArray[5] == -1 && inArray[8] == 1 {
-                return 5
-            }
-            if inArray[2] == -1 && inArray[5] == 1 && inArray[8] == 1 {
-                return 2
-            }
-        } else {
-            //On top
-            if inArray[0] == 0 && inArray[1] == 0 && inArray[2] == -1 {
-                return 2
-            }
-            if inArray[0] == 0 && inArray[1] == -1 && inArray[2] == 0 {
-                return 1
-            }
-            if inArray[0] == -1 && inArray[1] == 0 && inArray[2] == 0 {
-                return 0
-            }
-            //Middle
-            if inArray[3] == 0 && inArray[4] == 0 && inArray[5] == -1 {
-                return 5
-            }
-            if inArray[3] == 0 && inArray[4] == -1 && inArray[5] == 0 {
-                return 4
-            }
-            if inArray[3] == -1 && inArray[4] == 0 && inArray[5] == 0 {
-                return 3
-            }
-            //Bottom
-            if inArray[6] == 0 && inArray[7] == 0 && inArray[8] == -1 {
-                return 8
-            }
-            if inArray[6] == 0 && inArray[7] == -1 && inArray[8] == 0 {
-                return 7
-            }
-            if inArray[6] == -1 && inArray[7] == 0 && inArray[8] == 0 {
-                return 6
-            }
-            //Left
-            if inArray[0] == 0 && inArray[3] == 0 && inArray[6] == -1 {
-                return 6
-            }
-            if inArray[0] == 0 && inArray[3] == -1 && inArray[6] == 0 {
-                return 3
-            }
-            if inArray[0] == -1 && inArray[3] == 0 && inArray[6] == 0 {
-                return 0
-            }
-            //Middle
-            if inArray[1] == 0 && inArray[4] == 0 && inArray[7] == -1 {
-                return 7
-            }
-            if inArray[1] == 0 && inArray[4] == -1 && inArray[7] == 0 {
-                return 4
-            }
-            if inArray[1] == -1 && inArray[4] == 0 && inArray[7] == 0 {
-                return 1
-            }
-            //Right
-            if inArray[2] == 0 && inArray[5] == 0 && inArray[8] == -1 {
-                return 8
-            }
-            if inArray[2] == 0 && inArray[5] == -1 && inArray[8] == 0 {
-                return 5
-            }
-            if inArray[2] == -1 && inArray[5] == 0 && inArray[8] == 0 {
-                return 2
-            }
-        }
-        
-        return nil
+         print(playerImage)
+         if playerImage.contains("momo"){
+              playerNameText.text = "momo"
+         }else if playerImage.contains("sora") {
+              playerNameText.text = "sora"
+         }else if playerImage.contains("shiina"){
+              playerNameText.text = "shiina"
+         }else {
+             return
+         }
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+     // update O X icon
+//     private func updateOorX(oxButton: UIButton, forPlayer player: PlayerTurn) {
+//         var whoClicked: String
+//        var bossClicked : Bool = false
+//        switch oxButton.tag {
+//        case 0:
+//            button1.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        case 1:
+//            button2.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        case 2:
+//            button3.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        case 3:
+//            button4.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        case 4:
+//            button5.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        case 5:
+//            button6.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        case 6:
+//            button7.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        case 7:
+//            button8.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        case 8:
+//            button0.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//            break
+//        default:
+//            return
+//        }
+//         var bossClicked : Bool = false
+//         if board[0,1] == "O" {
+//                board[0,0] = "X"
+//            button0.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//                  print(" board[0,1] = X print from boss \(board.self)")
+//            playerTurn = .player
+//            }else{
+//                board[0,1] = "X"
+//             button1.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//                 print(" board[0,0] = X print from boss \(board.self)")
+//            playerTurn = .player
+//            }
+
+//    switch player {
+//    case .player:
+//    whoClicked = "O"
+//    oxButton.setImage(UIImage(named: "\(playerImage)"), for: .normal)
+//    case .boss:
+//    whoClicked = "X"
+//    oxButton.setImage(UIImage(named: "\(bossImage)"), for: .normal)
+//    }
+//
+//
+//
+//
+//    switch oxButton.tag {
+//    case 0:
+//    board[0,0] = whoClicked
+//    case 1:
+//    board[0,1] = whoClicked
+//    case 2:
+//    board[0,2] = whoClicked
+//    case 3:
+//    board[1,0] = whoClicked
+//    case 4:
+//    board[1,1] = whoClicked
+//    case 5:
+//    board[1,2] = whoClicked
+//    case 6:
+//    board[2,0] = whoClicked
+//    case 7:
+//    board[2,1] = whoClicked
+//    case 8:
+//    board[2,2] = whoClicked
+//    default:
+//    return
+//    }
+//}
+
+     // rule
+//     func winRule() -> String? {
+//         var result : String? = nil
+//
+//         if stepCount == 9  {
+//             result = "🔺"
+//         }
+//         // 0,1,2
+//         if board[0,0] != "" && board[0,0] == board[0,1] && board[0,1] == board[0,2] {
+//             result = board[0,0]
+//         // 3,4,5
+//         }
+//         if board[1,0] != "" && board[1,0] == board[1,1] && board[1,1] == board[1,2] {
+//            result = board[1,0]
+//         // 6,7,8
+//         }
+//         if board[2,0] != "" && board[2,0] == board[2,1] && board[2,1] == board[2,2] {
+//             result = board[2,0]
+//         // 0,3,6
+//         }
+//         if board[0,0] != "" && board[0,0] == board[1,0] && board[1,0] == board[2,0] {
+//            result = board[0,0]
+//         // 1,4,7
+//         }
+//         if board[0,1] != "" && board[0,1] == board[1,1] && board[1,1] == board[2,1] {
+//            result = board[0,1]
+//         // 2,5,8
+//         }
+//         if board[0,2] != "" && board[0,2] == board[1,2] && board[1,2] == board[2,2] {
+//            result = board[0,2]
+//         }
+//         // 0,4,8
+//         if board[0,0] != "" && board[0,0] == board[1,1] && board[1,1] == board[2,2] {
+//            result = board[0,0]
+//         }
+//          // 2,4,6
+//         if board[0,2] != "" && board[0,2] == board[1,1] && board[1,1] == board[2,0] {
+//            result = board[0,2]
+//         }
+//
+//         return result
+//     }
+     // detect game over or not
+     func continuesClickDetected(_ enable: Bool) {
+            for button in oxImages {
+                button.isUserInteractionEnabled = enable
+            }
+        }
+     // detect any button is clicked
+     func clickDetected(_ sender: UIButton) {
+         if sender.isSelected == false {
+             sender.isUserInteractionEnabled = false
+         }
+     }
+     // set circular button method
+     func applyRoundCorder(_ object:AnyObject) {
+         object.layer.cornerRadius = object.frame.width / 2
+         object.layer.masksToBounds = true
+     }
+    
+    func imageViewClickable(_ object: UIImageView, tap: UITapGestureRecognizer) {
+        object.isUserInteractionEnabled = true
+        object.addGestureRecognizer(tap)
     }
-
-
 }
-
