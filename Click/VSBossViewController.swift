@@ -63,24 +63,22 @@ class VSBossViewController: UIViewController {
             // set all OX image to circular
             
             // set all OX image clickable and action name (tapGestureRecognizer)
-           oximage.isUserInteractionEnabled = true
-           oximage.addGestureRecognizer(tapGestureRecognizer)
-    
+            oximage.isUserInteractionEnabled = true
+            oximage.addGestureRecognizer(tapGestureRecognizer)
+            // updateOX(image: oximage)
         }
-        
-        
         
     }
     // imageView clickable action using objectC
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-      
+        
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
-       
+        
         // if oxImage == nil clickable else unclickable
         guard tappedImage.image == nil else {
-           
+            
             imageViewClickable(tappedImage, tap: tapGestureRecognizer)
             return
         }
@@ -91,13 +89,18 @@ class VSBossViewController: UIViewController {
         print(stepCount)
         
         
+        
+        
         switch tappedImage.tag {
+            
+            
+            
         case 0 :
             board[0,0] = "O"
             if board[1,1] == "X" && board[1,2] == "X" && board[1,0] != "O" {
                 board[1,0] = "X"
                 image3.image = UIImage(named: bossImage)
-           } else if board[1,0] == "X" && board[1,1] == "X" && board[1,2] != "O" {
+            } else if board[1,0] == "X" && board[1,1] == "X" && board[1,2] != "O" {
                 board[1,2] = "X"
                 image5.image = UIImage(named: bossImage)
             } else if board[1,1] == "X" && board[0,2] == "X" && board[2,0] != "O" {
@@ -122,37 +125,33 @@ class VSBossViewController: UIViewController {
                 board[0,1] = "X"
                 image1.image = UIImage(named: bossImage)
             }
-            //            }else if board[2,0] != "O" {
-            //                board[2,0] = "X"
-            //                image6.image = UIImage(named: bossImage)
-            //            }
             print(board.self)
         case 1 :
             board[0,1] = "O"
             if board[0,0] == "X" && board[1,1] == "X" && board[2,2] != "O" {
                 board[2,2] = "X"
-                image8.image = UIImage(named: bossImage)
+                   image8.image = UIImage(named: bossImage)
             } else if board[1,1] == "X" && board[1,0] == "X" && board[1,2] != "O" {
                 board[1,2] = "X"
-                image5.image = UIImage(named: bossImage)
+                   image5.image = UIImage(named: bossImage)
             } else if board[1,1] == "X" && board[0,2] == "X" && board[2,0] != "O" {
                 board[2,0] = "X"
-                image6.image = UIImage(named: bossImage)
+                   image6.image = UIImage(named: bossImage)
             } else if board[1,1] == "X" && board[2,0] == "X" && board[0,2] != "O" {
                 board[0,2] = "X"
-                image2.image = UIImage(named: bossImage)
+                    image2.image = UIImage(named: bossImage)
             } else if board[1,1] == "X" && board[1,2] == "X" && board[1,0] != "O" {
                 board[1,0] = "X"
-                image3.image = UIImage(named: bossImage)
+                    image3.image = UIImage(named: bossImage)
             }else if board[0,0] == "O" && board[0,1] == "O"  && board[0,2] != "O" {
                 board[0,2] = "X"
-                image2.image = UIImage(named: bossImage)
+                   image2.image = UIImage(named: bossImage)
             }else if board[0,1] == "O" && board[0,2] == "O" && board[0,0] != "O"{
                 board[0,0] = "X"
-                image0.image = UIImage(named: bossImage)
+                    image0.image = UIImage(named: bossImage)
             }else if board[0,0] != "O" {
                 board[0,0] = "X"
-                image0.image = UIImage(named: bossImage)
+                   image0.image = UIImage(named: bossImage)
             }
             print(board.self)
         case 2 :
@@ -217,7 +216,7 @@ class VSBossViewController: UIViewController {
                 image6.image = UIImage(named: bossImage)
             }
             print(board.self)
-                
+            
         case 4 :
             board[1,1] = "O"
         case 5 :
@@ -258,13 +257,13 @@ class VSBossViewController: UIViewController {
             }else if board[1,0] == "X" && board[1,1] == "X" && board[2,1] != "O"{
                 board[2,1] = "X"
                 image7.image = UIImage(named: bossImage)
-            } else if board[2,0] == "O" && board[1,0] == "O" {
+            } else if board[2,0] == "O" && board[1,0] == "O" &&  board[0,0] != "O" {
                 board[0,0] = "X"
                 image0.image = UIImage(named: bossImage)
-            }else if board[2,0] == "O" && board[2,1] == "O" {
+            }else if board[2,0] == "O" && board[2,1] == "O" && board[2,2] != "O" {
                 board[2,2] = "X"
                 image8.image = UIImage(named: bossImage)
-            }else if board[2,0] == "O" && board[1,1] == "O" {
+            }else if board[2,0] == "O" && board[1,1] == "O" && board[0,2] != "O" {
                 board[0,2] = "X"
                 image2.image = UIImage(named: bossImage)
             }else if board[0,0] == "X" && board[1,1] == "X" && board[2,2] != "O"{
@@ -279,7 +278,7 @@ class VSBossViewController: UIViewController {
             }else if board[1,0] != "O" {
                 board[1,0] = "X"
                 image3.image = UIImage(named: bossImage)
-        }
+            }
             print(board.self)
         case 7 :
             board[2,1] = "O"
@@ -312,7 +311,7 @@ class VSBossViewController: UIViewController {
                 board[2,0] = "X"
                 image6.image = UIImage(named: bossImage)
             }
-
+            
             print(board.self)
         case 8 :
             board[2,2] = "O"
@@ -330,7 +329,7 @@ class VSBossViewController: UIViewController {
                 image6.image = UIImage(named: bossImage)
             } else if board[2,1] == "O" && board[2,2] == "O" && board[2,0] != "O" {
                 board[2,0] = "X"
-                 image6.image = UIImage(named: bossImage)
+                image6.image = UIImage(named: bossImage)
             } else if board[2,0] == "O" && board[2,2] == "O" && board[2,1] != "O" {
                 board[2,1] = "X"
                 image7.image = UIImage(named: bossImage)
@@ -339,10 +338,10 @@ class VSBossViewController: UIViewController {
                 image2.image = UIImage(named: bossImage)
             }else if board[2,2] == "O" && board[0,2] == "O" && board[1,2] != "O" {
                 board[1,2] = "X"
-                 image5.image = UIImage(named: bossImage)
+                image5.image = UIImage(named: bossImage)
             }else if board[1,1] == "O" && board[2,2] == "O" && board[0,0] != "O"  {
-                 board[0,0] = "X"
-                 image0.image = UIImage(named: bossImage)
+                board[0,0] = "X"
+                image0.image = UIImage(named: bossImage)
             }else if board[0,0] == "O" && board[2,2] == "O" && board[1,1] != "O" {
                 board[1,1] = "X"
                 image4.image = UIImage(named: bossImage)
@@ -350,13 +349,13 @@ class VSBossViewController: UIViewController {
                 board[2,0] = "X"
                 image6.image = UIImage(named: bossImage)
             }
-
+            
             print(board.self)
         default:
             return
         }
         //TODO: AImovement
-    
+        
         if let results = winRule() {
             winnerImage.isHidden = false
             if results == "O" {
@@ -376,173 +375,86 @@ class VSBossViewController: UIViewController {
                 return
             }
         }
-         print(board.self)
+        print(board.self)
     }
-     
-     override func viewDidAppear(_ animated: Bool) {
-         super.viewDidAppear(animated)
-        
-         applyRoundCorder(winnerImage)
-     
-         print("slected player image is \(playerImage)")
-         if playerImage.contains("momo"){
-              playerNameText.text = "momo"
-         }else if playerImage.contains("sora") {
-              playerNameText.text = "sora"
-         }else if playerImage.contains("shiina"){
-              playerNameText.text = "shiina"
-         }else {
-             return
-         }
-        
-    }
-  
     
-    //TODO: AI Movement
-
-     // update O X icon
-//     private func updateOorX(oxButton: UIButton, forPlayer player: PlayerTurn) {
-//         var whoClicked: String
-//        var bossClicked : Bool = false
-//        switch oxButton.tag {
-//        case 0:
-//            button1.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        case 1:
-//            button2.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        case 2:
-//            button3.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        case 3:
-//            button4.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        case 4:
-//            button5.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        case 5:
-//            button6.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        case 6:
-//            button7.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        case 7:
-//            button8.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        case 8:
-//            button0.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//            break
-//        default:
-//            return
-//        }
-//         var bossClicked : Bool = false
-//         if board[0,1] == "O" {
-//                board[0,0] = "X"
-//            button0.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//                  print(" board[0,1] = X print from boss \(board.self)")
-//            playerTurn = .player
-//            }else{
-//                board[0,1] = "X"
-//             button1.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//                 print(" board[0,0] = X print from boss \(board.self)")
-//            playerTurn = .player
-//            }
-
-//    switch player {
-//    case .player:
-//    whoClicked = "O"
-//    oxButton.setImage(UIImage(named: "\(playerImage)"), for: .normal)
-//    case .boss:
-//    whoClicked = "X"
-//    oxButton.setImage(UIImage(named: "\(bossImage)"), for: .normal)
-//    }
-//
-//
-//
-//
-//    switch oxButton.tag {
-//    case 0:
-//    board[0,0] = whoClicked
-//    case 1:
-//    board[0,1] = whoClicked
-//    case 2:
-//    board[0,2] = whoClicked
-//    case 3:
-//    board[1,0] = whoClicked
-//    case 4:
-//    board[1,1] = whoClicked
-//    case 5:
-//    board[1,2] = whoClicked
-//    case 6:
-//    board[2,0] = whoClicked
-//    case 7:
-//    board[2,1] = whoClicked
-//    case 8:
-//    board[2,2] = whoClicked
-//    default:
-//    return
-//    }
-//}
-
-     // rule
-     func winRule() -> String? {
-         var result : String? = nil
-
-         if stepCount == 4  {
-             result = "🔺"
-         }
-         // 0,1,2
-         if board[0,0] != "" && board[0,0] == board[0,1] && board[0,1] == board[0,2] {
-             result = board[0,0]
-         // 3,4,5
-         }
-         if board[1,0] != "" && board[1,0] == board[1,1] && board[1,1] == board[1,2] {
-            result = board[1,0]
-         // 6,7,8
-         }
-         if board[2,0] != "" && board[2,0] == board[2,1] && board[2,1] == board[2,2] {
-             result = board[2,0]
-         // 0,3,6
-         }
-         if board[0,0] != "" && board[0,0] == board[1,0] && board[1,0] == board[2,0] {
-            result = board[0,0]
-         // 1,4,7
-         }
-         if board[0,1] != "" && board[0,1] == board[1,1] && board[1,1] == board[2,1] {
-            result = board[0,1]
-         // 2,5,8
-         }
-         if board[0,2] != "" && board[0,2] == board[1,2] && board[1,2] == board[2,2] {
-            result = board[0,2]
-         }
-         // 0,4,8
-         if board[0,0] != "" && board[0,0] == board[1,1] && board[1,1] == board[2,2] {
-            result = board[0,0]
-         }
-          // 2,4,6
-         if board[0,2] != "" && board[0,2] == board[1,1] && board[1,1] == board[2,0] {
-            result = board[0,2]
-         }
-
-         return result
-     }
-     // detect game over or not
-     func continuesClickDetected(_ enable: Bool) {
-            for button in oxImages {
-                button.isUserInteractionEnabled = enable
-            }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        applyRoundCorder(winnerImage)
+        
+        print("slected player image is \(playerImage)")
+        if playerImage.contains("momo"){
+            playerNameText.text = "momo"
+        }else if playerImage.contains("sora") {
+            playerNameText.text = "sora"
+        }else if playerImage.contains("shiina"){
+            playerNameText.text = "shiina"
+        }else {
+            return
         }
-     // detect any button is clicked
-     func clickDetected(_ sender: UIButton) {
-         if sender.isSelected == false {
-             sender.isUserInteractionEnabled = false
-         }
-     }
-     // set circular button method
-     func applyRoundCorder(_ object:AnyObject) {
-         object.layer.cornerRadius = object.frame.width / 2
-         object.layer.masksToBounds = true
-     }
+        
+    }
+    
+    // rule
+    func winRule() -> String? {
+        var result : String? = nil
+        
+        if stepCount == 4  {
+            result = "🔺"
+        }
+        // 0,1,2
+        if board[0,0] != "" && board[0,0] == board[0,1] && board[0,1] == board[0,2] {
+            result = board[0,0]
+            // 3,4,5
+        }
+        if board[1,0] != "" && board[1,0] == board[1,1] && board[1,1] == board[1,2] {
+            result = board[1,0]
+            // 6,7,8
+        }
+        if board[2,0] != "" && board[2,0] == board[2,1] && board[2,1] == board[2,2] {
+            result = board[2,0]
+            // 0,3,6
+        }
+        if board[0,0] != "" && board[0,0] == board[1,0] && board[1,0] == board[2,0] {
+            result = board[0,0]
+            // 1,4,7
+        }
+        if board[0,1] != "" && board[0,1] == board[1,1] && board[1,1] == board[2,1] {
+            result = board[0,1]
+            // 2,5,8
+        }
+        if board[0,2] != "" && board[0,2] == board[1,2] && board[1,2] == board[2,2] {
+            result = board[0,2]
+        }
+        // 0,4,8
+        if board[0,0] != "" && board[0,0] == board[1,1] && board[1,1] == board[2,2] {
+            result = board[0,0]
+        }
+        // 2,4,6
+        if board[0,2] != "" && board[0,2] == board[1,1] && board[1,1] == board[2,0] {
+            result = board[0,2]
+        }
+        
+        return result
+    }
+    // detect game over or not
+    func continuesClickDetected(_ enable: Bool) {
+        for button in oxImages {
+            button.isUserInteractionEnabled = enable
+        }
+    }
+    // detect any button is clicked
+    func clickDetected(_ sender: UIButton) {
+        if sender.isSelected == false {
+            sender.isUserInteractionEnabled = false
+        }
+    }
+    // set circular button method
+    func applyRoundCorder(_ object:AnyObject) {
+        object.layer.cornerRadius = object.frame.width / 2
+        object.layer.masksToBounds = true
+    }
     // set all OX image circle once only
     func imageViewClickable(_ object: UIImageView, tap: UITapGestureRecognizer) {
         object.isUserInteractionEnabled = false
