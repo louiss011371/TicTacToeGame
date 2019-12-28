@@ -61,7 +61,7 @@ class GameViewController: UIViewController{
                 print("winner is X")
                 winnerImage.image = UIImage(named: bossImage)
                 continuesClickDetected(false)
-            }else if results == "🔺" && stepCount == 9  {
+            }else if results == "🔺"   {
                 winnerImage.image = UIImage(named: drawImage)
                   print("draw")
             }else{
