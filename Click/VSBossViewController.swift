@@ -21,6 +21,8 @@ class VSBossViewController: UIViewController {
     var stepCount = 0
     var playerTurn :PlayerTurn = .player
     
+    var arr = ["X","O"]
+    
     @IBAction func eight(_ sender: UIButton) {
         print("click")
     }
@@ -65,6 +67,7 @@ class VSBossViewController: UIViewController {
             // set all OX image clickable and action name (tapGestureRecognizer)
             oximage.isUserInteractionEnabled = true
             oximage.addGestureRecognizer(tapGestureRecognizer)
+            
             // updateOX(image: oximage)
         }
         
@@ -260,7 +263,10 @@ class VSBossViewController: UIViewController {
             } else if board[2,0] == "O" && board[1,0] == "O" &&  board[0,0] != "O" {
                 board[0,0] = "X"
                 image0.image = UIImage(named: bossImage)
-            }else if board[2,0] == "O" && board[2,1] == "O" && board[2,2] != "O" {
+            } else if board[1,0] != "O" {
+                board[1,0] = "X"
+                image3.image = UIImage(named: bossImage)
+            } else if board[2,0] == "O" && board[2,1] == "O" && board[2,2] != "O" {
                 board[2,2] = "X"
                 image8.image = UIImage(named: bossImage)
             }else if board[2,0] == "O" && board[1,1] == "O" && board[0,2] != "O" {
@@ -275,9 +281,6 @@ class VSBossViewController: UIViewController {
             }else if board[1,1] == "X" && board[2,2] == "X" && board[0,0] != "O"{
                 board[0,0] = "X"
                 image0.image = UIImage(named: bossImage)
-            }else if board[1,0] != "O" {
-                board[1,0] = "X"
-                image3.image = UIImage(named: bossImage)
             }
             print(board.self)
         case 7 :
@@ -368,7 +371,7 @@ class VSBossViewController: UIViewController {
                 print("winner is X")
                 winnerImage.image = UIImage(named: bossImage)
                 continuesClickDetected(false)
-            }else if results == "🔺" && stepCount == 9  {
+            }else if results == "🔺"  {
                 winnerImage.image = UIImage(named: drawImage)
                 print("draw")
             }else{
@@ -399,10 +402,7 @@ class VSBossViewController: UIViewController {
     // rule
     func winRule() -> String? {
         var result : String? = nil
-        
-        if stepCount == 4  {
-            result = "🔺"
-        }
+      
         // 0,1,2
         if board[0,0] != "" && board[0,0] == board[0,1] && board[0,1] == board[0,2] {
             result = board[0,0]
