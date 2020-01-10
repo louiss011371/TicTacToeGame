@@ -18,6 +18,8 @@ class GameViewController: UIViewController{
     
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet var winnerImage: UIImageView!
+    @IBOutlet weak var reStartGameBtn: UIBarButtonItem!
+    
     
     @IBOutlet var oxImage: [UIButton]!
     var board = GameMap()
@@ -56,14 +58,17 @@ class GameViewController: UIViewController{
                 print("winner is O")
                 winnerImage.image = UIImage(named: playerImage)
                 continuesClickDetected(false)
+                reStartGameBtn.isEnabled = true
             }else if results == "X"{
                 winnerLabel.isHidden = false
                 print("winner is X")
                 winnerImage.image = UIImage(named: bossImage)
                 continuesClickDetected(false)
+                reStartGameBtn.isEnabled = true
             }else if results == "🔺"   {
                 winnerImage.image = UIImage(named: drawImage)
-                  print("draw")
+                print("draw")
+                reStartGameBtn.isEnabled = true
             }else{
                 return
             }
@@ -77,9 +82,9 @@ class GameViewController: UIViewController{
         winnerImage.isHidden = true
         winnerImage.image = nil
         winnerLabel.isHidden = true
-        
         applyRoundCorder(winnerImage)
-
+        reStartGameBtn.isEnabled = false
+        
         for oxImage in oxImage {
             oxImage.setImage(nil, for: .normal)
             applyRoundCorder(oxImage)
@@ -196,5 +201,25 @@ class GameViewController: UIViewController{
     func applyRoundCorder(_ object:AnyObject) {
         object.layer.cornerRadius = object.frame.width / 2
         object.layer.masksToBounds = true
+    }
+    
+    
+    @IBAction func reStartGame(_ sender: UIBarButtonItem) {
+        self.reStartGame()
+        
+    }
+    
+    func reStartGame() {
+        stepCount = 0
+        winnerImage.isHidden = true
+        winnerImage.image = nil
+        winnerLabel.isHidden = true
+        continuesClickDetected(true)
+        
+        board.board = [["","",""],["","",""],["","",""]]
+        for oxImage in oxImage {
+            oxImage.setImage(nil, for: .normal)
+        }
+        
     }
 }

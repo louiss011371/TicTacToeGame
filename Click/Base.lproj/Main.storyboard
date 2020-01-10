@@ -219,10 +219,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QZf-be-TyR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tic-Tac-Toe" id="NY5-9b-Ths"/>
+                    <navigationItem key="navigationItem" title="Tic-Tac-Toe" id="NY5-9b-Ths">
+                        <barButtonItem key="rightBarButtonItem" title="New Game" id="MJ8-Rr-ol3">
+                            <connections>
+                                <action selector="reStartGame:" destination="AxJ-z4-N1L" id="9lf-sc-3n6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backToCharacter" destination="NY5-9b-Ths" id="F0a-lZ-ETR"/>
                         <outlet property="playerNameText" destination="dS4-PZ-JeU" id="9BY-hf-4UC"/>
+                        <outlet property="reStartGameBtn" destination="MJ8-Rr-ol3" id="4Oy-AK-pWv"/>
                         <outlet property="winnerImage" destination="9Eq-4p-As8" id="Sfy-wG-UYI"/>
                         <outlet property="winnerLabel" destination="CAN-NQ-x9Y" id="qUJ-qJ-qZO"/>
                         <outletCollection property="oxImage" destination="qj0-FP-nQb" collectionClass="NSMutableArray" id="k6S-Z0-MA4"/>
