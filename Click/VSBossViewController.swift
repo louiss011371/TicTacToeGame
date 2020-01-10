@@ -12,9 +12,11 @@ class VSBossViewController: UIViewController {
     var receiveredCharacter : CharacterViewController?
     
     @IBOutlet weak var playerNameText: UILabel!
-    
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet var winnerImage: UIImageView!
+    
+    
+    @IBOutlet weak var reStartGameBtn: UIBarButtonItem!
     
     //     @IBOutlet var oxImages: [UIButton]!
     var board = GameMap()
@@ -37,7 +39,6 @@ class VSBossViewController: UIViewController {
     @IBOutlet weak var image7: UIImageView!
     @IBOutlet weak var image8: UIImageView!
     
-    
     @IBOutlet var oxImages: [UIImageView]!
     
     @IBOutlet weak var backToCharacter: UINavigationItem!
@@ -55,6 +56,7 @@ class VSBossViewController: UIViewController {
         winnerLabel.isHidden = true
         // set winner image is nil
         winnerImage.image = nil
+        reStartGameBtn.isEnabled = false
         for oximage in oxImages {
             // default all OX image is nil
             oximage.image = nil
@@ -91,13 +93,8 @@ class VSBossViewController: UIViewController {
         stepCount += 1
         print(stepCount)
         
-        
-        
-        
         switch tappedImage.tag {
-            
-            
-            
+        
         case 0 :
             board[0,0] = "O"
             if board[1,1] == "X" && board[1,2] == "X" && board[1,0] != "O" {
@@ -383,16 +380,19 @@ class VSBossViewController: UIViewController {
         
         if let results = winRule() {
             winnerImage.isHidden = false
+            winnerLabel.isHidden = false
+            continuesClickDetected(false)
+            winnerLabel.isHidden = true
+            reStartGameBtn.isEnabled = true
+            
             if results == "O" {
                 winnerLabel.isHidden = false
                 print("winner is O")
                 winnerImage.image = UIImage(named: playerImage)
                 continuesClickDetected(false)
             }else if results == "X"{
-                winnerLabel.isHidden = false
                 print("winner is X")
                 winnerImage.image = UIImage(named: bossImage)
-                continuesClickDetected(false)
             }else if results == "🔺"  {
                 winnerImage.image = UIImage(named: drawImage)
                 print("draw")
@@ -482,4 +482,26 @@ class VSBossViewController: UIViewController {
         object.isUserInteractionEnabled = false
         object.addGestureRecognizer(tap)
     }
+    
+    @IBAction func reStartGame(_ sender: UIBarButtonItem) {
+        self.reStartGame()
+        board[1,1] = "X"
+        image4.image = UIImage(named: bossImage)
+    }
+    
+    func reStartGame() {
+        stepCount = 0
+        winnerImage.isHidden = true
+        winnerImage.image = nil
+        winnerLabel.isHidden = true
+        continuesClickDetected(true)
+        reStartGameBtn.isEnabled = false
+    
+        
+        board.board = [["","",""],["","",""],["","",""]]
+        for oxImage in oxImages {
+            oxImage.image = nil
+        }
+    }
+    
 }

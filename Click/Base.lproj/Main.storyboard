@@ -691,7 +691,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aEZ-vx-ylS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tic-Tac-Toe" id="gVy-i8-zb2"/>
+                    <navigationItem key="navigationItem" title="Tic-Tac-Toe" id="gVy-i8-zb2">
+                        <barButtonItem key="rightBarButtonItem" title="New Game" id="TCP-6R-Z2A">
+                            <connections>
+                                <action selector="reStartGame:" destination="Xhx-Jo-lBk" id="4W3-E7-AOA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backToCharacter" destination="gVy-i8-zb2" id="aGx-lU-tx5"/>
                         <outlet property="image0" destination="kuR-Rg-dSc" id="ahg-X2-t81"/>
@@ -704,6 +710,7 @@
                         <outlet property="image7" destination="K3s-Mi-Ip2" id="MwX-bn-HJN"/>
                         <outlet property="image8" destination="poX-Kj-tob" id="iiu-ra-lRL"/>
                         <outlet property="playerNameText" destination="pz5-ns-H6a" id="sXg-e6-pwZ"/>
+                        <outlet property="reStartGameBtn" destination="TCP-6R-Z2A" id="e5G-mu-4zg"/>
                         <outlet property="winnerImage" destination="K7p-cD-gCV" id="jqe-Uu-FK1"/>
                         <outlet property="winnerLabel" destination="KX8-XZ-Qkf" id="epE-cK-dOn"/>
                         <outletCollection property="oxImages" destination="kuR-Rg-dSc" collectionClass="NSMutableArray" id="RMN-Iz-7kr"/>
