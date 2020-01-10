@@ -15,11 +15,9 @@ class GameViewController: UIViewController{
     
     @IBOutlet weak var playerNameText: UILabel!
     
-    
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet var winnerImage: UIImageView!
     @IBOutlet weak var reStartGameBtn: UIBarButtonItem!
-    
     
     @IBOutlet var oxImage: [UIButton]!
     var board = GameMap()
@@ -53,22 +51,18 @@ class GameViewController: UIViewController{
         
         if let results = winRule() {
             winnerImage.isHidden = false
+            winnerLabel.isHidden = false
+            continuesClickDetected(false)
+            reStartGameBtn.isEnabled = true
             if results == "O" {
-                winnerLabel.isHidden = false
                 print("winner is O")
                 winnerImage.image = UIImage(named: playerImage)
-                continuesClickDetected(false)
-                reStartGameBtn.isEnabled = true
-            }else if results == "X"{
-                winnerLabel.isHidden = false
+            }else if results == "X" {
                 print("winner is X")
                 winnerImage.image = UIImage(named: bossImage)
-                continuesClickDetected(false)
-                reStartGameBtn.isEnabled = true
-            }else if results == "🔺"   {
-                winnerImage.image = UIImage(named: drawImage)
+            }else if results == "🔺" {
                 print("draw")
-                reStartGameBtn.isEnabled = true
+                winnerImage.image = UIImage(named: drawImage)
             }else{
                 return
             }
@@ -104,8 +98,8 @@ class GameViewController: UIViewController{
         }else {
             return
         }
-       
     }
+    
     // update O X icon
     private func updateOorX(oxButton: UIButton, forPlayer player: PlayerTurn) {
         var whoClicked: String
@@ -203,10 +197,8 @@ class GameViewController: UIViewController{
         object.layer.masksToBounds = true
     }
     
-    
     @IBAction func reStartGame(_ sender: UIBarButtonItem) {
         self.reStartGame()
-        
     }
     
     func reStartGame() {
@@ -215,11 +207,11 @@ class GameViewController: UIViewController{
         winnerImage.image = nil
         winnerLabel.isHidden = true
         continuesClickDetected(true)
+        reStartGameBtn.isEnabled = false
         
         board.board = [["","",""],["","",""],["","",""]]
         for oxImage in oxImage {
             oxImage.setImage(nil, for: .normal)
         }
-        
     }
 }
