@@ -169,6 +169,10 @@ class VSBossViewController: UIViewController {
             } else if board[0,2] == "O" && board[2,2] == "O" && board[1,2] != "O" {
                 board[1,2] = "X"
                 image5.image = UIImage(named: bossImage)
+            }   else if board[2,1] != "O" {
+                board[2,1] = "X"
+                image7.image = UIImage(named: bossImage)
+                
             } else if board[2,2] != "O" {
                 board[2,2] = "X"
                 image8.image = UIImage(named: bossImage)
@@ -191,7 +195,10 @@ class VSBossViewController: UIViewController {
             print(board.self)
         case 3 :
             board[1,0] = "O"
-            if board[0,1] == "X" && board[1,1] == "X" && board[2,1] != "O" {
+            if board[1,1] == "X" && board[2,1] == "X" && board[0,1] != "O" {
+            board[0,1] = "X"
+            image1.image = UIImage(named: bossImage)
+        } else if board[0,1] == "X" && board[1,1] == "X" && board[2,1] != "O" {
                 board[2,1] = "X"
                 image7.image = UIImage(named: bossImage)
             }else if board[1,1] == "X" && board[2,2] == "X" && board[0,0] != "O" {
@@ -224,7 +231,11 @@ class VSBossViewController: UIViewController {
             board[1,1] = "O"
         case 5 :
             board[1,2] = "O"
-            if board[1,1] == "X" && board[2,2] == "X" && board[0,0] != "O" {
+            
+            if board[1,1] == "X" && board[2,1] == "X" && board[0,1] != "O" {
+                board[0,1] = "X"
+                image1.image = UIImage(named: bossImage)
+            } else if board[1,1] == "X" && board[2,2] == "X" && board[0,0] != "O" {
                 board[0,0] = "X"
                 image0.image = UIImage(named: bossImage)
             } else if board[2,2] != "O" {
@@ -251,7 +262,10 @@ class VSBossViewController: UIViewController {
             }
         case 6 :
             board[2,0] = "O"
-            if board[1,1] == "X" && board[1,2] == "X" && board[1,0] != "O" {
+            if board[1,1] == "X" && board[2,1] == "X" && board[0,1] != "O" {
+                board[0,1] = "X"
+                image1.image = UIImage(named: bossImage)
+            } else if board[1,1] == "X" && board[1,2] == "X" && board[1,0] != "O" {
                 board[1,0] = "X"
                 image3.image = UIImage(named: bossImage)
             }else if board[0,2] == "X" && board[1,1] == "X" && board[0,0] != "O" {
@@ -285,8 +299,13 @@ class VSBossViewController: UIViewController {
             print(board.self)
         case 7 :
             board[2,1] = "O"
-            
-            if board[2,0] == "O" && board[2,1] == "O" && board[2,2] != "X" {
+            if board[1,1] == "X" && board[1,2] == "X" && board[1,0] != "O" {
+            board[1,0] = "X"
+            image3.image = UIImage(named: bossImage)
+            } else if board[1,1] == "X" && board[0,2] == "X" && board[2,0] != "O" {
+                board[2,0] = "X"
+                image6.image = UIImage(named: bossImage)
+            }else if board[2,0] == "O" && board[2,1] == "O" && board[2,2] != "X" {
                 board[2,2] = "X"
                 image8.image = UIImage(named: bossImage)
             }
@@ -318,7 +337,10 @@ class VSBossViewController: UIViewController {
             print(board.self)
         case 8 :
             board[2,2] = "O"
-            if board[1,1] == "X" && board[1,2] == "X" && board[1,0] != "O" {
+            if board[1,1] == "X" && board[2,1] == "X" && board[0,1] != "O" {
+                board[0,1] = "X"
+                image1.image = UIImage(named: bossImage)
+            } else if board[1,1] == "X" && board[1,2] == "X" && board[1,0] != "O" {
                 board[1,0] = "X"
                 image3.image = UIImage(named: bossImage)
             } else if  board[0,0] == "X" && board[0,2] == "X" && board[0,1] != "O" {
