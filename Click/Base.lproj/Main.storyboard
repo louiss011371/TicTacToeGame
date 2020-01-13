@@ -81,25 +81,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-OW-MmD">
-                                <rect key="frame" x="156.66666666666666" y="379" width="100.99999999999997" height="138"/>
+                                <rect key="frame" x="174.66666666666666" y="406" width="65" height="84"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1v-Y1-aOO">
-                                        <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="30"/>
                                         <state key="normal" title="VS Boss"/>
                                         <connections>
                                             <segue destination="Xhx-Jo-lBk" kind="show" id="fIM-pR-QkI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e38-TT-mMH">
-                                        <rect key="frame" x="0.0" y="54" width="101" height="30"/>
+                                        <rect key="frame" x="0.0" y="54" width="65" height="30"/>
                                         <state key="normal" title="VS player"/>
                                         <connections>
                                             <segue destination="35d-il-4V0" kind="show" id="YeW-tX-aTC"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M85-hA-jou">
-                                        <rect key="frame" x="0.0" y="108" width="101" height="30"/>
-                                        <state key="normal" title="Network mode"/>
                                     </button>
                                 </subviews>
                             </stackView>
