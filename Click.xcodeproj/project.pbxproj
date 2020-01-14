@@ -15,7 +15,7 @@
 		B5012D3D22F177D300899585 /* ClickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5012D3C22F177D300899585 /* ClickUITests.swift */; };
 		B56C71C023AC7C2C00167BC6 /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C71BF23AC7C2C00167BC6 /* GameMap.swift */; };
 		B56C71C223AC7CB600167BC6 /* PlayerTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C71C123AC7CB500167BC6 /* PlayerTurn.swift */; };
-		B597FA6E237EED9C00C0A70D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597FA6D237EED9C00C0A70D /* GameViewController.swift */; };
+		B597FA6E237EED9C00C0A70D /* VSPlayerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597FA6D237EED9C00C0A70D /* VSPlayerGameViewController.swift */; };
 		B5D424FC23AE534E00746CB5 /* CharacterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D424FB23AE534E00746CB5 /* CharacterDelegate.swift */; };
 		B5D424FE23AF1D3D00746CB5 /* SelectGameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D424FD23AF1D3D00746CB5 /* SelectGameModeViewController.swift */; };
 		B5E2767223B1204C00FD8444 /* VSBossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2767123B1204C00FD8444 /* VSBossViewController.swift */; };
@@ -54,7 +54,7 @@
 		B5012D3E22F177D300899585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B56C71BF23AC7C2C00167BC6 /* GameMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMap.swift; sourceTree = "<group>"; };
 		B56C71C123AC7CB500167BC6 /* PlayerTurn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurn.swift; sourceTree = "<group>"; };
-		B597FA6D237EED9C00C0A70D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B597FA6D237EED9C00C0A70D /* VSPlayerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSPlayerGameViewController.swift; sourceTree = "<group>"; };
 		B5D424FB23AE534E00746CB5 /* CharacterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDelegate.swift; sourceTree = "<group>"; };
 		B5D424FD23AF1D3D00746CB5 /* SelectGameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameModeViewController.swift; sourceTree = "<group>"; };
 		B5E2767123B1204C00FD8444 /* VSBossViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSBossViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				B5D424FB23AE534E00746CB5 /* CharacterDelegate.swift */,
 				B5E2767123B1204C00FD8444 /* VSBossViewController.swift */,
 				B5D424FD23AF1D3D00746CB5 /* SelectGameModeViewController.swift */,
-				B597FA6D237EED9C00C0A70D /* GameViewController.swift */,
+				B597FA6D237EED9C00C0A70D /* VSPlayerGameViewController.swift */,
 				B5FC36EF23AE523300833A59 /* CharacterViewController.swift */,
 				B56C71C123AC7CB500167BC6 /* PlayerTurn.swift */,
 				B5012D2322F177D300899585 /* Assets.xcassets */,
@@ -274,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B597FA6E237EED9C00C0A70D /* GameViewController.swift in Sources */,
+				B597FA6E237EED9C00C0A70D /* VSPlayerGameViewController.swift in Sources */,
 				B5FC36F023AE523300833A59 /* CharacterViewController.swift in Sources */,
 				B56C71C023AC7C2C00167BC6 /* GameMap.swift in Sources */,
 				B56C71C223AC7CB600167BC6 /* PlayerTurn.swift in Sources */,
