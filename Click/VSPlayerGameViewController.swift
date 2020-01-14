@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 
-class GameViewController: UIViewController{
+class VSPlayerGameViewController: UIViewController{
     var receiveredCharacter : CharacterViewController?
     
     @IBOutlet weak var playerNameText: UILabel!
@@ -27,7 +27,7 @@ class GameViewController: UIViewController{
     @IBOutlet weak var backToCharacter: UINavigationItem!
     // player, boss , draw game image
     var playerImage = ""
-    var bossImage = "pandagoro"
+    var bossImage = "momoimage"
     var drawImage = "draw"
     
     @IBAction func tapDetected(_ sender: UIButton) {
@@ -208,6 +208,7 @@ class GameViewController: UIViewController{
         winnerLabel.isHidden = true
         continuesClickDetected(true)
         reStartGameBtn.isEnabled = false
+        playerTurn = .player
         
         board.board = [["","",""],["","",""],["","",""]]
         for oxImage in oxImage {
