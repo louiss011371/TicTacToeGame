@@ -27,7 +27,7 @@ class GameViewController: UIViewController{
     @IBOutlet weak var backToCharacter: UINavigationItem!
     // player, boss , draw game image
     var playerImage = ""
-    var bossImage = "pandagoro"
+    var bossImage = "momoimage"
     var drawImage = "draw"
     
     @IBAction func tapDetected(_ sender: UIButton) {
