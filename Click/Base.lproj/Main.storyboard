@@ -472,7 +472,7 @@
         <!--Tic-Tac-Toe-->
         <scene sceneID="fbd-YE-k1v">
             <objects>
-                <viewController id="rnL-rF-zHR" customClass="GameViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rnL-rF-zHR" customClass="VSPlayerGameViewController" customModule="Click" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O13-MR-wzb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

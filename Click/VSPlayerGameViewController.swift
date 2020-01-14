@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 
-class GameViewController: UIViewController{
+class VSPlayerGameViewController: UIViewController{
     var receiveredCharacter : CharacterViewController?
     
     @IBOutlet weak var playerNameText: UILabel!

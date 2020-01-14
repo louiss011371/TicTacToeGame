@@ -78,7 +78,7 @@ class CharacterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        let gameVC = segue.destination as? GameViewController
+        let gameVC = segue.destination as? VSPlayerGameViewController
         gameVC?.playerImage = imageNameText
         
     }
