@@ -208,6 +208,7 @@ class GameViewController: UIViewController{
         winnerLabel.isHidden = true
         continuesClickDetected(true)
         reStartGameBtn.isEnabled = false
+        playerTurn = .player
         
         board.board = [["","",""],["","",""],["","",""]]
         for oxImage in oxImage {
